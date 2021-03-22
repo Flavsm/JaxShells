@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color:#FFF5EE;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navBar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    min-height: 7vh;
+    border-bottom: 1px solid whitesmoke;
+    background-color: pink;
+    z-index: 2;
+}
+
+.showNavName {
+    display: block;
+    font-family: 'Caveat', cursive;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+#navjax {
+    color: black;
+}
+
+.menuList {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    min-width: 20vw;
+    align-items: center;
+    margin-right: 10px;
+    
+}
+.dropBox {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.menuButton, .cartButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropButton svg {
+    width: 16px;
+    height: 16px;
+}
+
+.cartButton i svg {
+    width: 22px;
+    height: 22px;
+}
+
+.dropDown {
+    display: none;
+}
+
+.show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 11vw;
+    height: 10vh;
+    margin-top: 2px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.option {
+    width: 11vw;
+    height: 5vh;
+}
+    
+#shop, #about, #shop:active, #about:active, #shop:after, #about:after {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5px;
+    width: 11vw;
+    height: 5vh;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: #FFF5EE;;
+}
+
+#shop:hover, #about:hover{
+    background-color: #bcd4e6;
+    box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+}
+
+.cartBox {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100vw;
+}
+.cartList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-image:linear-gradient(135deg, #bcd4e6, pink);
+    height: 93vh;
+    width: 30vw;
+    margin-top: 7vh;
+    margin-right: 3vw;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: slow-out 0.5s ease-out 1;
+}
+
+@keyframes slow-out {
+    0% {
+        height: 0;
+    } 
+    100% {
+        height: 93vh;
+    }
+}
+
+.cartTitleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    font-size: 15px;
+}
+
+.itemsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 26vw;
+    height: 80vh;
+    line-height: 2;
+    font-size: 12px;
+}
+
+.listBox {
+    list-style: none;
+}
+
+.checkOutBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+}
+.checkOutBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+    height: 4vh;
+    font-size: 11px;
+    background-color: pink;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+    opacity: 1;
+    text-decoration: none;
+    color: black;
+}
+
+.titleBox {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 8vh;
+    min-height: 25vh;
+}
+
+.titleBox  h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-style: none;
+    font-size: 55px;
+}
+
+.titleBox h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-style: none;
+    font-size: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.colorBox1, .sizeBox1, .packetBox1 {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40vh;
+}
+
+.colorText1 {
+    width: 30vw;
+    height: 10vh;  
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+}
+
+.colorBoxImg img, .sizeBoxImg img, .packetBoxImg img {
+    max-width: 60vw; 
+    background-color: white;
+}
+
+.colorBox img, .sizeBox img, .packetBox img {
+    height: 180px;
+}
+
+.sizeText1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 75vw;
+    height: 25vh;
+    color: black;
+    margin-left: 5vw;
+}
+
+.sizeList1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    height: 15vh;
+    font-size: 14px;
+    list-style-type: square;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.sizeList1 li {
+    width: 15vw;
+}
+
+.sizeList1 :nth-child(1){
+    width: 18vw;
+}
+
+.packetText1 {
+    width: 25vw;
+    height: 10vh;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.buyBox1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 15vh;
+}
+
+.buyBox1 p {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #bcd4e6;
+    border-radius: 2px;
+    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 12vh;
+    background-color: pink;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.contactBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.contactBox ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.contactBox, .contactBox ul {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    color: black;
+}
+
+button:hover, select:hover{
+    cursor: pointer;
+}
+
+        @media (min-width: 600px) {
+            
+            .navBar {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 100vw;
+                min-height: 7vh;
+                border-bottom: 1px solid whitesmoke;
+                background-color: pink;
+                
+            }
+            
+            .showNavName {
+                display: block;
+                font-family: 'Caveat', cursive;
+                margin-left: 20px;
+                font-size: 30px;
+            }
+            
+            #navjax {
+                color: black;
+            }
+            
+            .menuList {
+                display: flex;
+                justify-content: space-evenly;
+                list-style: none;
+                min-width: 15vw;
+                align-items: center;
+                
+            }
+            .dropBox {
+                position: relative;
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .menuButton, .cartButton{
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 15px;
+            }
+            
+            .dropButton svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .cartButton i svg {
+                width: 32px;
+                height: 32px;
+            }
+            .dropDown {
+                display: none;
+            }
+
+            .show {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                width: 6vw;
+                height: 10vh;
+                margin-top: 5px;
+                box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+            }
+
+            .option {
+                cursor: pointer;
+                width: 6vw;
+                height: 5vh;
+            }
+                
+            #shop, #about, #shop:active, #about:active, #shop:after, #about:after {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 5px;
+                width: 6vw;
+                height: 5vh;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 15px;
+                text-decoration: none;
+                color: black;
+                background-color: #FFF5EE;;
+            }
+
+            #shop:hover, #about:hover{
+                background-color: #bcd4e6;
+                box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+            }
+
+            .cartBox {
+                display: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 100vw;
+            }
+            .cartList {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                position: fixed;
+                background-image:linear-gradient(135deg, pink, #bcd4e6);
+                height: 93vh;
+                width: 20vw;
+                margin-top: 7vh;
+                margin-right: 0;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                animation: slow-out 0.5s ease-out 1;
+            }
+
+            @keyframes slow-out {
+                0% {
+                    width: 0vw;
+                } 
+                100% {
+                    width: 20vw;
+                }
+            }
+            .cartTitleBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15vw;
+                height: 10vh;
+            }
+
+            .itemsBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 18vw;
+                height: 73vh;
+                line-height: 2;
+            }
+
+            .listBox {
+                list-style: none;
+            }
+
+            .checkOutBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15vw;
+                height: 10vh;
+            }
+            .checkOutBtn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10vw;
+                height: 7vh;
+                font-size: 22px;
+                background-color: pink;
+                border-radius: 5px;
+                box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+                opacity: 1;
+                text-decoration: none;
+                color: black;
+            }
+
+            
+            .titleBox {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 8vh;
+                height: 30vh;
+            }
+            
+            .titleBox  h1 {
+                font-family: 'Caveat', cursive;
+                font-weight: 600;
+                font-size: 85px;
+            }
+            
+            .titleBox h3 {
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 25px;
+            }
+            
+            main {
+                display: flex;
+                flex-direction: column;
+                min-height: 70vh;
+            }
+            
+            .colorBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                min-height: 90vh;
+            }
+            
+            .colorText {
+                width: 10vw;
+                height: 10vh;  
+                font-size: 25px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+            
+            .colorBox img, .sizeBox img, .packetBox img {
+                height: 500px;
+            }
+
+            .colorBoxImg img {
+                max-width: 60vw;    
+            }
+            
+            .sizeBox {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-evenly;
+                min-height: 90vh;
+            }
+            
+            .sizeText {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                min-width: 10vw;
+                width: 15vw;
+                min-height: 30vh;
+                height: 60vh;
+                color: black;
+            }
+
+            .sizeTitle h3 {
+                font-size: 22px;
+            }
+            
+            .sizeList {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30vw;
+                height: 40vh;
+                font-size: 22px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            .sizeList1 :nth-child(1) {
+                width: 15vw;
+            }
+
+            .sizeBox img {
+                width: 800px;
+            }
+
+            .packetBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-evenly;
+                min-height: 90vh;
+            }
+
+            .packetText {
+                width: 10vw;
+                height: 10vh;
+                font-size: 25px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+            
+            .buyBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                min-height: 25vh;
+            }
+
+            .buyBox p {
+                font-size: 25px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+            }
+            
+            #buy-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10vw;
+                height: 7vh;
+                font-size: 30px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                background-color: #bcd4e6;
+                border-radius: 5px;
+                box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+                opacity: 1;
+                text-decoration: none;
+                color: black;
+            }
+
+            footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                min-height: 12vh;
+                background-color: pink;
+                border-bottom: 1px solid whitesmoke;
+            }
+            
+            .contactBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .contactBox ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+            }
+            
+            .contactBox, .contactBox ul {
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 16px;
+                color: black;
+            }
+        }

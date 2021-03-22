@@ -1,0 +1,638 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color:#FFF5EE;
+    height: 92vh;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    min-height: 7vh;
+    border-bottom: 1px solid whitesmoke;
+    background-color: pink;
+    z-index: 2;
+}
+
+.showNavName {
+    display: block;
+    font-family: 'Caveat', cursive;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+#navjax {
+    color: black;
+}
+
+.menuList {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    min-width: 20vw;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.dropBox {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menuButton, .cartButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropButton svg {
+    width: 16px;
+    height: 16px;
+}
+
+.cartButton svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+.dropDown {
+    display: none;
+}
+
+.show {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 11vw;
+    height: 10vh;
+    margin-top: 2px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.option {
+    width: 11vw;
+    height: 5vh;
+}
+    
+#home, #about, #home:active, #about:active, #home:after, #about:after {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5px;
+    width: 11vw;
+    height: 5vh;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: #FFF5EE;
+}
+
+#home:hover, #about:hover{
+    background-color: #bcd4e6;
+    box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+}
+
+.cartBox {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100vw;
+}
+.cartList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-image:linear-gradient(135deg, #bcd4e6, pink);
+    height: 92.8vh;
+    width: 30vw;
+    margin-top: 7vh;
+    margin-bottom: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: slow-out 0.5s ease-out 1;
+}
+
+@keyframes slow-out {
+    0% {
+        height: 0;
+    } 
+    100% {
+        height: 92.8vh;
+    }
+}
+
+.cartTitleBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+    font-size: 15px;
+}
+
+.itemsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 26vw;
+    height: 80vh;
+    line-height: 2;
+    font-size: 12px;
+}
+
+.listBox {
+    list-style: none;
+}
+
+.checkOutBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+}
+.checkOutBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16vw;
+    height: 4vh;
+    font-size: 11px;
+    background-color: pink;
+    border-radius: 4px;
+    box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+    opacity: 1;
+    text-decoration: none;
+    color: black;
+}
+
+.packsBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 7vh;
+    height: 82vh;
+    width: 100vw;
+}
+
+.packsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 82vh;
+    width: 100vw;
+    list-style: none;
+}
+
+.packItem {
+    display: flex;
+    justify-content: center;
+    width: 60vw; 
+}
+
+.packItem img {
+    width: 130px;
+    height: 100px;
+}
+
+.textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-image:linear-gradient(135deg, #bcd4e6, pink);
+    width: 100px;
+    height: 100px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.eachPackBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.sizeBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 18vw;
+    height: 18vh;
+    margin: 5px;
+}
+
+.sizeBox select{
+    height: 2vh;
+    width: 18vw; 
+    margin: 1px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+.sizeBox p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    width: 20vw;
+    margin: 2px;
+}
+
+.buttonBox button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2vh;
+    width: 10vw;
+    font-size: 7px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 11vh;
+    background-color: pink;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.contactBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactBox ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.contactBox, .contactBox ul {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    color: black;
+}
+
+button:hover, select:hover{
+    cursor: pointer;
+}
+
+        @media (min-width: 600px) {
+
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color:  	#FFF5EE;
+                height: 98vh;
+            }
+            
+            .navBar {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 100vw;
+                min-height: 7vh;
+                border-bottom: 1px solid whitesmoke;
+                background-color: pink;
+                z-index: 2;
+            }
+            
+            .showNavName {
+                display: block;
+                font-family: 'Caveat', cursive;
+                margin-left: 20px;
+                font-size: 30px;
+            }
+            
+            #navjax {
+                color: black;
+            }
+            
+            .menuList {
+                display: flex;
+                justify-content: space-evenly;
+                list-style: none;
+                min-width: 15vw;
+                align-items: center;
+            }
+            
+            .dropBox {
+                position: relative;
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            
+            .menuButton, .cartButton{
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 15px;
+            }
+            
+            .dropButton svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .cartButton i svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .dropDown {
+                display: none;
+            }
+
+            .show {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                width: 6vw;
+                height: 10vh;
+                margin-top: 5px;
+                box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+            }
+
+            .option {
+                cursor: pointer;
+                width: 6vw;
+                height: 5vh;
+            }
+                
+            #home, #about, #home:active, #about:active, #home:after, #about:after {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding-left: 5px;
+                width: 6vw;
+                height: 5vh;
+                font-family: 'Lato', sans-serif;
+                font-size: 15px;
+                font-weight: bolder;
+                font-style: italic;
+                text-decoration: none;
+                color: black;
+                background-color: #FFF5EE;;
+            }
+
+            #home:hover, #about:hover{
+                background-color: #bcd4e6;
+                box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+            }
+
+            .cartBox {
+                display: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                width: 100vw;
+            }
+
+            .cartList {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                position: fixed;
+                background-image:linear-gradient(135deg, pink, #bcd4e6);
+                height: 93vh;
+                width: 20vw;
+                margin-top: 7vh;
+                margin-bottom: 0;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                animation: slow-out 0.5s ease-out 1;
+            }
+
+            @keyframes slow-out {
+                0% {
+                    width: 0vw;
+                } 
+                100% {
+                    width: 20vw;
+                }
+            }
+
+            .cartTitleBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15vw;
+                height: 10vh;
+            }
+
+            .itemsBox {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 18vw;
+                height: 73vh;
+                
+                line-height: 2;
+            }
+
+            .listBox {
+                list-style: none;
+            }
+
+            .checkOutBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 15vw;
+                height: 10vh;
+            }
+            .checkOutBtn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10vw;
+                height: 7vh;
+                font-size: 22px;
+                background-color: pink;
+                border-radius: 5px;
+                box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
+                opacity: 1;
+                text-decoration: none;
+                color: black;
+            }
+
+            .packsBox  {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 6vh;
+                height: 82vh;
+                font-size: 20px;
+            }
+            
+            .packsList {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                height: 82vh;
+                width: 80vw;
+                list-style: none; 
+            }
+            
+            .packItem {
+                display: flex;
+                justify-content: center;
+                width: 30vw; 
+            }
+            
+            .packItem img {
+                width: 230px;
+                height: 230px;
+            }
+
+            .textBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                background-image:linear-gradient(135deg, pink, #bcd4e6);
+                min-width: 200px;
+                min-height: 230px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            
+            .eachPackBox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 12vw;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 30px;
+                padding-top: 10px;
+            }
+
+            .sizeBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 12vw;
+                height: 26vh;
+            }
+            
+            .sizeBox select{
+                height: 4vh;
+                width: 12vw; 
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 12px;
+            }
+            
+            .sizeBox p {
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 20px;
+            }
+            
+            .buttonBox {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 8vh;
+                width: 12vw;
+            }
+            
+            .buttonBox button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3.5vh;
+                width: 5vw;
+                font-size: 15px;
+            }
+            
+            footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                min-height: 12vh;
+                background-color: pink;
+                border-bottom: 1px solid whitesmoke;
+            }
+            .contactBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .contactBox ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+            }
+            
+            .contactBox, .contactBox ul {
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-style: italic;
+                font-size: 16px;
+                color: black;
+            }
+        }
+

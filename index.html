@@ -4,87 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">   
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Lato:ital,wght@0,100;1,300&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="index.css">
     <title>Jax Shells</title>
 </head>
 <body>
     <header>
-        <div>
-            <nav class="navBar">
-                <ul>
-                    <li>
-                        <div div="dropBox">
-                            <button class="menuButton">
-                                <i class="dropButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"/></svg></i>
-                            </button>
-                            <div class="dropDown">
-                                <div class="option" id="catalog">
-                                    <a href="./catalog.html">Catalog</a>
-                                </div>
-                                <div class="option" id="contact">
-                                    <a href="./contact.html">Contact</a>
-                                </div>
-                                <div class="option" id="about">
-                                    <a href="./about.html">About Us</a>
-                                </div>
+        <nav class="navBar">
+            <ul class=menuList>
+                <li>
+                    <div div="dropBox">
+                        <button class="menuButton">
+                            <i class="dropButton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z" />
+                                </svg></i>
+                        </button>
+                        <div class="dropDown">
+                            <div class="option">
+                                <a href="./shop.html" id="shop">Shop</a>
+                            </div>
+                            <div class="option">
+                                <a href="./about.html" id="about">About Us</a>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <button class=cartButton>
-                            <a href="./cart.html">
-                                <i><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M16.53 7l-.564 2h-15.127l-.839-2h16.53zm-14.013 6h12.319l.564-2h-13.722l.839 2zm5.983 5c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm11.305-15l-3.432 12h-13.017l.839 2h13.659l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"/></svg></i>
-                            </a>
-                        </button>
-                    </li>
-                </ul>
-               <div class="navName">
-                   <h2>Jax Shells</h2>
-               </div>
-            </nav>
+                    </div>
+                </li>
+                <li>
+                    <button class=cartButton>
+                        <!-- <a href="./cart.html"> -->
+                        <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.53 7l-.564 2h-15.127l-.839-2h16.53zm-14.013 6h12.319l.564-2h-13.722l.839 2zm5.983 5c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm11.305-15l-3.432 12h-13.017l.839 2h13.659l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z" />
+                            </svg></i>
+                        <!-- </a> -->
+                    </button>
+                </li>
+            </ul>
+            <div class="animate__animated animate__fadeIn">
+                <h2 id="navjax"></h2>
+            </div>
+        </nav>
+        <div class="cartBox">
+            <div class="cartList">
+                <div class="cartTitleBox">
+                    <h4>Your Cart</h4>
+                </div>
+                <div class="itemsBox">
+                    <ul class="listBox"></ul>
+                </div>
+                <div class="checkOutBox">
+                    <button class="checkOutBtn">Check-out</button>
+                </div>
+            </div>
         </div>
-        <div class="titleBox">
+        </div>
+        <!-- <div class="titleBox titleBox1">
             <h1>Jax Shells</h1>
             <h3>Jacksonville Sourced Seashells</h3>
-        </div>
+        </div> -->
     </header>
-    <main>
-        <div class="colorBox">
-            <div>Pink and purple colored.</div>
-            <div class="colorBoxImg">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.thrfun.com%2Fimg%2F078%2F758%2Fseashells_x1.jpg&f=1&nofb=1" alt="seashells" height=500>  
-            </div>
+    <div class="mostElemBox">    
+        <div class="titleBox titleBox1">
+                <h1>Jax Shells</h1>
+                <h3>Jacksonville Sourced Seashells</h3>
         </div>
-        <div class="sizeBox">
-            <div>Sizes from a dime to 2inches.</div>
-            <div>
-                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fblog.pinklyperfect.com%2Fwp-content%2Fuploads%2F2016%2F02%2Fpink.seashells.jpg&f=1&nofb=1" alt="seashells" height=500>
+        <main>
+            <div class="colorBox colorBox1">
+                <div class="colorText colorText1">Pink and purple colored.</div>
+                <div class="colorBoxImg">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.thrfun.com%2Fimg%2F078%2F758%2Fseashells_x1.jpg&f=1&nofb=1" alt="seashells">  
+                </div>
             </div>
-        </div>
-        <div class="packetBox">
-            <div>Packs of 5, 10, 20 and more.</div>
-            <div>
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flive.staticflickr.com%2F3010%2F5874817131_2f388fed2e.jpg&f=1&nofb=1" alt="seashells" height=500>
+            <div class="sizeBox sizeBox1">
+                <div class="sizeText sizeText1">
+                    <!-- <div class="sizeTitle">
+                        <h3>Sizes:</h3>
+                    </div> -->
+                    <div>    
+                        <ul class="sizeList sizeList1">
+                            <li>Extra Small</li>
+                            <li>Dime</li>
+                            <li>Nickle</li>
+                            <li>1 inch</li>
+                            <li>1 1/4 inch</li>
+                            <li>1 1/2 inch</li>
+                            <li>1 3/4 inch</li>
+                            <li>2 inches</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sizeBoxImg">
+                    <img src="everysize.jpeg" alt="seashells">
+                </div>
             </div>
-        </div>
-        <div class="buyBox">
-            <div>
-                <span>Purchase your very own Princess Collection</span>
+            <div class="packetBox packetBox1">
+                <div class="packetText packetText1">Packs of 5, 10, 20 and more.</div>
+                <div class="packetBoxImg">
+                    <img src="https://pixfeeds.com/images/hobbies/collecting/1280-136324041-seashells.jpg" alt="seashells">
+                </div>
             </div>
-            <!-- <div>
-                <button class="buyButton">Catalog</button>
-            </div> -->
-        </div>
-    </main>
-    <footer>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </footer>
-
-
-    <script src="./app.js"></script>
+            <div class="buyBox buyBox1">
+                <a href="./shop.html" id="buy-btn">Buy now</a>
+                <p>Purchase your very own Princess Collection</p>
+            </div>
+        </main>
+        <footer>
+            <div class="contactBox">
+                <p>Contact Us:</p>
+                <ul>
+                    <li>XXXX@gmail.com</li>
+                    <li>(XXX)-XXXXXXX</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="./mainPage.js"></script>
 </body>
 </html>
