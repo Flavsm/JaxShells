@@ -245,7 +245,7 @@ body {
 .sizeBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 18vw;
     height: 18vh;
@@ -281,9 +281,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1vh;
+    height: 2.5vh;
     width: 10vw;
     font-size: 7px;
+    -webkit-appearance: none;
 }
 
 footer {
