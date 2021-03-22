@@ -149,7 +149,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
+    width: 30vw;
     height: 5vh;
     font-size: 15px;
 }
@@ -173,14 +173,14 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
+    width: 30vw;
     height: 5vh;
 }
 .checkOutBtn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24vw;
+    width: 25vw;
     height: 4vh;
     font-size: 11px;
     background-color: pink;
