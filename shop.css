@@ -39,11 +39,11 @@ body {
 
 .menuList {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
-    min-width: 24vw;
+    min-width: 18vw;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .dropBox {

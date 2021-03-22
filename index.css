@@ -44,11 +44,11 @@ header {
 
 .menuList {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style: none;
-    min-width: 24vw;
+    min-width: 18vw;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
     
 }
 .dropBox {
@@ -224,11 +224,11 @@ main {
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    min-height: 55vh;
+    min-height: 50vh;
 }
 
 .colorText1 {
-    width: 40vw;
+    width: 45vw;
     height: 10vh;  
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -250,7 +250,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 85vw;
+    width: 60vw;
     height: 25vh;
     color: black;
     margin-left: 5vw;
@@ -262,7 +262,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 40vw;
+    width: 60vw;
     height: 15vh;
     font-size: 14px;
     list-style-type: square;
@@ -280,7 +280,7 @@ main {
 }
 
 .packetText1 {
-    width: 25vw;
+    width: 45vw;
     height: 10vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
