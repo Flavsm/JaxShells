@@ -39,9 +39,9 @@ body {
 
 .menuList {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style: none;
-    min-width: 20vw;
+    min-width: 24vw;
     align-items: center;
     margin-right: 10px;
 }
@@ -61,13 +61,13 @@ body {
 }
 
 .dropButton svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
-.cartButton svg {
-    width: 22px;
-    height: 22px;
+.cartButton i svg {
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -79,14 +79,14 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 11vw;
+    width: 13vw;
     height: 10vh;
     margin-top: 2px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .option {
-    width: 11vw;
+    width: 13vw;
     height: 5vh;
 }
     
@@ -95,7 +95,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding-left: 5px;
-    width: 11vw;
+    width: 13vw;
     height: 5vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -127,7 +127,7 @@ body {
     height: 92.8vh;
     width: 30vw;
     margin-top: 7vh;
-    margin-bottom: 0;
+    margin-bottom: 0vh;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     animation: slow-out 0.5s ease-out 1;
@@ -146,7 +146,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
+    width: 20vw;
     height: 5vh;
     font-size: 15px;
 }
@@ -157,7 +157,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     width: 26vw;
-    height: 80vh;
+    height: 75vh;
     line-height: 2;
     font-size: 12px;
 }
@@ -177,7 +177,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16vw;
+    width: 20vw;
     height: 4vh;
     font-size: 11px;
     background-color: pink;
@@ -193,7 +193,7 @@ body {
     justify-content: space-around;
     align-items: center;
     margin-top: 7vh;
-    height: 82vh;
+    height: 92vh;
     width: 100vw;
 }
 
@@ -203,7 +203,7 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    height: 82vh;
+    height: 84vh;
     width: 100vw;
     list-style: none;
 }
@@ -215,8 +215,8 @@ body {
 }
 
 .packItem img {
-    width: 130px;
-    height: 100px;
+    width: 120px;
+    height: 90px;
 }
 
 .textBox {
@@ -225,8 +225,8 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background-image:linear-gradient(135deg, #bcd4e6, pink);
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 90px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -238,7 +238,7 @@ body {
     width: 20vw;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 11px;
     padding-top: 3px;
 }
 
@@ -281,7 +281,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2vh;
+    height: 1vh;
     width: 10vw;
     font-size: 7px;
 }
@@ -291,7 +291,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 11vh;
+    min-height: 9vh;
     background-color: pink;
     border-bottom: 1px solid whitesmoke;
 }
@@ -314,7 +314,7 @@ footer {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 12px;
+    font-size: 11px;
     color: black;
 }
 

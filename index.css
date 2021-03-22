@@ -46,7 +46,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    min-width: 20vw;
+    min-width: 24vw;
     align-items: center;
     margin-right: 10px;
     
@@ -65,13 +65,13 @@ header {
 }
 
 .dropButton svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .cartButton i svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
 }
 
 .dropDown {
@@ -82,14 +82,14 @@ header {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 11vw;
+    width: 13vw;
     height: 10vh;
     margin-top: 2px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .option {
-    width: 11vw;
+    width: 13vw;
     height: 5vh;
 }
     
@@ -98,7 +98,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     padding-left: 5px;
-    width: 11vw;
+    width: 13vw;
     height: 5vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -130,7 +130,7 @@ header {
     height: 93vh;
     width: 30vw;
     margin-top: 7vh;
-    margin-right: 3vw;
+    margin-right: 0vw;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     animation: slow-out 0.5s ease-out 1;
@@ -149,7 +149,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
+    width: 20vw;
     height: 5vh;
     font-size: 15px;
 }
@@ -160,7 +160,7 @@ header {
     justify-content: flex-start;
     align-items: flex-start;
     width: 26vw;
-    height: 80vh;
+    height: 75vh;
     line-height: 2;
     font-size: 12px;
 }
@@ -180,7 +180,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 16vw;
+    width: 20vw;
     height: 4vh;
     font-size: 11px;
     background-color: pink;
@@ -197,14 +197,14 @@ header {
     align-items: center;
     justify-content: flex-start;
     padding-top: 8vh;
-    min-height: 25vh;
+    min-height: 30vh;
 }
 
 .titleBox  h1 {
     font-family: 'Caveat', cursive;
     font-weight: 600;
     font-style: none;
-    font-size: 55px;
+    font-size: 50px;
 }
 
 .titleBox h3 {
@@ -224,25 +224,25 @@ main {
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    min-height: 40vh;
+    min-height: 55vh;
 }
 
 .colorText1 {
-    width: 30vw;
+    width: 40vw;
     height: 10vh;  
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .colorBoxImg img, .sizeBoxImg img, .packetBoxImg img {
-    max-width: 60vw; 
+    max-width: 55vw; 
     background-color: white;
 }
 
 .colorBox img, .sizeBox img, .packetBox img {
-    height: 180px;
+    height: 160px;
 }
 
 .sizeText1 {
@@ -250,7 +250,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 75vw;
+    width: 85vw;
     height: 25vh;
     color: black;
     margin-left: 5vw;
@@ -285,6 +285,7 @@ main {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: italic;
+    font-size: 16px;
 }
 
 .buyBox1 {
@@ -292,11 +293,11 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    min-height: 15vh;
+    min-height: 25vh;
 }
 
 .buyBox1 p {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: italic;
@@ -323,7 +324,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 12vh;
+    min-height: 11vh;
     background-color: pink;
     border-bottom: 1px solid whitesmoke;
 }
