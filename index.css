@@ -180,7 +180,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
+    width: 24vw;
     height: 4vh;
     font-size: 11px;
     background-color: pink;
@@ -262,7 +262,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 60vw;
+    width: 50vw;
     height: 15vh;
     font-size: 14px;
     list-style-type: square;
@@ -272,10 +272,6 @@ main {
 }
 
 .sizeList1 li {
-    width: 15vw;
-}
-
-.sizeList1 :nth-child(1){
     width: 18vw;
 }
 
