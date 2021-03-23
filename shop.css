@@ -125,7 +125,7 @@ body {
     position: fixed;
     background-image:linear-gradient(135deg, #bcd4e6, pink);
     height: 92.8vh;
-    width: 30vw;
+    width: 35vw;
     margin-top: 7vh;
     margin-bottom: 0vh;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -181,6 +181,7 @@ body {
     align-items: center;
     width: 30vw;
     height: 5vh;
+    font-size: 15px;
 }
 .checkOutBtn {
     display: flex;
@@ -205,9 +206,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 7vh;
-    height: 92vh;
-    width: 100vw;
-    /* background-color: darkblue; */
+    height: 84vh;
 }
 
 .packsList {
@@ -218,9 +217,8 @@ body {
     align-items: center;
     flex-wrap: wrap;
     height: 84vh;
-    width: 60vw;
+    width: 70vw;
     list-style: none;
-    /* background-color: darkgoldenrod; */
 }
 
 .packItem {
@@ -505,6 +503,7 @@ a, a:hover, a:focus, a:active {
                 align-items: center;
                 width: 15vw;
                 height: 10vh;
+                font-size: 20px;
             }
 
             .itemsBox {
@@ -528,6 +527,7 @@ a, a:hover, a:focus, a:active {
                 justify-content: space-evenly;
                 align-items: center;
                 width: 15vw;
+                font-size: 20px;
             }
 
             .checkOutBox {
@@ -614,7 +614,7 @@ a, a:hover, a:focus, a:active {
                 justify-content: space-evenly;
                 align-items: center;
                 width: 12vw;
-                height: 26vh;
+                height: 20vh;
             }
             
             .sizeBox select{

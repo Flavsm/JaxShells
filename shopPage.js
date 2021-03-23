@@ -4,7 +4,7 @@ const dropBtn = document.querySelector('.menuButton');
 const dropContent = document.querySelector('.dropDown');
 const cartBtn = document.querySelector('.cartButton');
 const cartBox = document.querySelector('.cartBox');
-const packsBox = document.querySelector('.packsBox');
+const mainPage = document.querySelector('.mainPage');
 
 const firstSelect = document.querySelector('.selectOne');
 const secondSelect = document.querySelector('.selectTwo');
@@ -76,33 +76,33 @@ function showCart() {
 
     if (cartBox.style.display !== "flex") {
         cartBox.style.display = "flex";
-        packsBox.style.opacity = 0.8;
+        mainPage.style.opacity = 0.8;
         if(mediaSize.matches) {
-            packsBox.style.width = "80vw";
-            packsBox.animate( {
+            mainPage.style.width = "80vw";
+            mainPage.animate( {
             width: ['100vw', '80vw'],
             easing: 'ease-in',
             }, 350);
         } else {
-            packsBox.style.width = "70vw";
-            packsBox.animate( {
-            width: ['100vw', '70vw'],
+            mainPage.style.width = "65vw";
+            mainPage.animate( {
+            width: ['100vw', '65vw'],
             easing: 'ease-in',
         }, 350);
         }
     } else {
         cartBox.style.display = "none";
-        packsBox.style.opacity = 1;
+        mainPage.style.opacity = 1;
         if(mediaSize.matches) {
-            packsBox.style.width = "100vw";
-            packsBox.animate( {
+            mainPage.style.width = "100vw";
+            mainPage.animate( {
             width: ['80vw', '100vw'],
             easing: 'ease-in',
             }, 350);
         } else {
-            packsBox.style.width = "100vw";
-            packsBox.animate( {
-            width: ['70vw', '100vw'],
+            mainPage.style.width = "100vw";
+            mainPage.animate( {
+            width: ['65vw', '100vw'],
             easing: 'ease-in',
             }, 350);
         }
