@@ -256,11 +256,12 @@ function addToCart(x, elem) {
         newDiv.style.justifyContent = 'center';
         newDiv.style.alignItems = 'center';
 
-        newIcon.style.paddingTop = '2px';
+        newIcon.style.paddingTop = '10px';
         newIcon.style.cursor = 'pointer';
         newIcon.style.color = 'black';
+
         //put img for icon
-        newIcon.innerHTML = '<img src="https://tinyurl.com/2hnchrcy" width="15" height="15">';
+        newIcon.innerHTML = '<img id="the-img" src="./delete.png" width="30" height="30">';
     } else {
         newList.style.fontSize = '9px';
 
@@ -271,17 +272,18 @@ function addToCart(x, elem) {
         newItem2.style.width = '11vw';
         newItem3.style.width = '4vw';
 
-        newDiv.style.width = '3vw';
-        newDiv.style.height = '3vh';
         newDiv.style.display = 'flex';
         newDiv.style.justifyContent = 'center';
         newDiv.style.alignItems = 'center';
+        newDiv.style.width = '3vw';
+        newDiv.style.height = '3vh';
 
+        newIcon.style.display = 'flex';
         newIcon.style.paddingTop = '2px';
         newIcon.style.cursor = 'pointer';
 
         //put img for icon
-        newIcon.innerHTML = '<img src="https://tinyurl.com/2hnchrcy" width="10" height="10">';
+        newIcon.innerHTML = '<img src="./delete.png" width="10" height="10">';
     }
 
     //push item's prices in the array
