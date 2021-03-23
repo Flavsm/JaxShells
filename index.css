@@ -93,7 +93,7 @@ header {
     height: 5vh;
 }
     
-#shop, #about, #shop:active, #about:active, #shop:after, #about:after {
+#shop, #about {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -358,6 +358,11 @@ button:hover, select:hover{
     cursor: pointer;
 }
 
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
         @media (min-width: 600px) {
             
             .navBar {
@@ -435,7 +440,7 @@ button:hover, select:hover{
                 height: 5vh;
             }
                 
-            #shop, #about, #shop:active, #about:active, #shop:after, #about:after {
+            #shop, #about {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
@@ -705,5 +710,14 @@ button:hover, select:hover{
                 font-style: italic;
                 font-size: 16px;
                 color: black;
+            }
+
+            button:hover, select:hover{
+                cursor: pointer;
+            }
+            
+            a, a:hover, a:focus, a:active {
+                text-decoration: none;
+                color: inherit;
             }
         }
