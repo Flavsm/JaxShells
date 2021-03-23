@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-color:#FFF5EE;
-    height: 92vh;
+    height: 100vh;
 }
 
 .navBar {
@@ -189,6 +189,9 @@ body {
 }
 
 .packsBox {
+    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -198,6 +201,9 @@ body {
 }
 
 .packsList {
+    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -212,8 +218,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60vw; 
-    height: 18vh;
+    width: 55vw; 
+    height: 16vh;
 }
 
 .packItem img {
@@ -227,7 +233,9 @@ body {
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    justify-content: -webkit-flex;;
+    justify-content: --webkit-box;
     align-items: center;
     background-image:linear-gradient(135deg, #bcd4e6, pink);
     width: 120px;
