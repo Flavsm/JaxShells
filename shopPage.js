@@ -21,6 +21,8 @@ const removeBtn = document.querySelectorAll('.removeBtn');
 const itemsBox = document.querySelector('.itemsBox');
 const listBox = document.querySelector('.listBox');
 
+const cartTotal = document.getElementById('cart-total');
+
 //EVENT LISTENERS
 
 dropBtn.addEventListener('click', openMenu);
@@ -33,44 +35,18 @@ secondSelect.addEventListener('change', () => {priceChange(secondSelect, pack2)}
 thirdSelect.addEventListener('change', () => {priceChange(thirdSelect, pack3)});
 fourthSelect.addEventListener('change', () => {priceChange(fourthSelect, pack4)});
 
+// add event listener to each pack's button
 addBtn.forEach(x => {
     if (x.id === 'add5') {
-        x.addEventListener('click', () => addToCart('5'));
+        x.addEventListener('click', () => addToCart('5', firstSelect));
     } else if (x.id === 'add10') {
-        x.addEventListener('click', () => addToCart('10'));
+        x.addEventListener('click', () => addToCart('10', secondSelect));
     } else if (x.id === 'add20') {
-        x.addEventListener('click', () => addToCart('20'));
+        x.addEventListener('click', () => addToCart('20', thirdSelect));
     } else {
-        x.addEventListener('click', () => addToCart('50'));
+        x.addEventListener('click', () => addToCart('50', fourthSelect));
     }
 });
-
-/* removeBtn.forEach(x => {
-    if (x.id === 'remove5') {
-        x.addEventListener('click', () => removeFromCart('5'));
-    } else if (x.id === 'remove10') {
-        x.addEventListener('click', () => removeFromCart('10'));
-    } else if (x.id === 'remove20') {
-        x.addEventListener('click', () => removeFromCart('20'));
-    } else {
-        x.addEventListener('click', () => removeFromCart('50'));
-    }
-}); */
-
-
-//FUNCTIONS
-
-//if add button clicked, add item to cart
-
-function addToCart(x) {
-    /* const arr = [];
-    arr.push(x); */
-    const newItem = document.createElement('li');
-    const valueItem = document.createTextNode(`pic - 1 pack of ${x} small size: price button`);
-    newItem.appendChild(valueItem);
-    listBox.appendChild(newItem);
-    
-}
 
 /* function removeFromCart(x) {
     if (listBox.hasChildNodes()) {
@@ -78,6 +54,9 @@ function addToCart(x) {
       } 
    
 } */
+
+
+//FUNCTIONS
 
 //show dropdown menu
 function openMenu() {
@@ -89,9 +68,11 @@ function closeMenu () {
     dropContent.classList.remove('show');
 }
 
+//check media width
+const mediaSize = window.matchMedia("(min-width: 600px)");
+
 //toggle cart, adapt main element
 function showCart() {
-    const mediaSize = window.matchMedia("(min-width: 600px)");
 
     if (cartBox.style.display !== "flex") {
         cartBox.style.display = "flex";
@@ -172,38 +153,170 @@ function priceChange (elem, pack) {
     };
 }
 
+//create array for total price
+const sumArr = [];
+const subArr = [];
 
-/* const itemsArr = [];
-selectAll.forEach((e) => {
-    itemsArr.push(e);
-}); */
- 
-/* function eachChild() {
-    for (let i = 0; i < selectAll.length; i++) {
-       console.log(selectAll[i].firstElementChild.id)
-    }   
-}; */
+//if add button clicked, add item to cart
+function addToCart(x, elem) {
 
-/* function eachElement() {
-    let eachChild;
-    for (let i = 0; i < selectAll.length; i++) {
-        eachChild = selectAll[i].firstElementChild.id;
-     }; 
+    let itemPrice;
+    let z = elem.value;  
+    let itemSize = elem.options[elem.selectedIndex].text;
 
-     switch (eachChild) {
-         case "select-one":
-            () => {priceChange(firstSelect, pack1)};
-            break;
-         case "select-two":
-            () => {priceChange(secondSelect, pack2)};
-            break;
-         case "select-three":
-            () => {priceChange(thirdSelect, pack3)};
-            break;
-         case "select-four":
-            () => {priceChange(fourthSelect, pack4)};
-            break;
-     }
+    if (elem === firstSelect) {
+        price = 1;
+    } else if (elem === secondSelect) {
+        price = 2;
+    } else if (elem === thirdSelect) {
+        price = 3;
+    } else {
+        price = 4;
+    };
 
-} */
+   switch (z) {
+    case "0":
+        itemPrice = `${price}`;
+        break;
+    case "1":
+        itemPrice = `${price+1}`;
+        break;
+    case "2":
+        itemPrice = `${price+2}`;
+        break;
+    case "3":
+        itemPrice = `${price+3}`;
+        break;
+    case "4":
+        itemPrice = `${price+4}`;
+        break;
+    case "5":
+        itemPrice = `${price+5}`;
+        break;
+    case "6":
+        itemPrice = `${price+6}`;
+        break;
+    case "7":
+        itemPrice = `${price+7}`;
+        break; 
+    default: "Contact for price";           
+    };
+
+    //create list
+    const newList = document.createElement('ul');
+    newList.style.display = 'flex';
+    newList.style.flexDirection = 'column';
+    newList.style.justifyContent = 'space-evenly';
+    newList.style.alignItems = 'center';
+
+    //create list item
+    const newItem = document.createElement('li');
+    //give style to list item
+    newItem.style.display = 'flex';
+    newItem.style.justifyContent = 'space-evenly';
+    newItem.style.alignItems = 'center';
+
+    //create new item for list - type of pack
+    const newItem1 = document.createElement('p');
+    //create text of list item
+    const valueItem = document.createTextNode(`Pack of ${x}`);
+
+    //create new item for list - size of pack
+    const newItem2 = document.createElement('p');
+    //create text of pack size
+    const sizeItem = document.createTextNode(`${itemSize}`);
+
+
+    //create new item for list - price of pack
+    const newItem3 = document.createElement('p');
+    //create text of price
+    const newPrice = document.createTextNode(`$${itemPrice}`)
+   
+    //create div for delete button
+    const newDiv = document.createElement('div');
+    //create icon for delete button
+    const newIcon = document.createElement('i');
+    //append icon to div
+    newDiv.appendChild(newIcon);
+
+    // check media size
+    if (mediaSize.matches) {
+        newList.style.fontSize = '18px';
+
+        newItem.style.width = '19vw';
+        newItem.style.height = '4vh';
+
+        newItem1.style.width = '7vw';
+        newItem2.style.width = '6vw';
+        newItem3.style.width = '2vw';
+
+        newDiv.style.width = '2vw';
+        newDiv.style.height = '2vh';
+        newDiv.style.display = 'flex';
+        newDiv.style.justifyContent = 'center';
+        newDiv.style.alignItems = 'center';
+
+        newIcon.style.paddingTop = '2px';
+        newIcon.style.cursor = 'pointer';
+
+        //put img for icon
+        newIcon.innerHTML = '<img src="https://tinyurl.com/2hnchrcy" width="15" height="15">';
+    } else {
+        newList.style.fontSize = '9px';
+
+        newItem.style.width = '26w';
+        newItem.style.height = '4vh';
+        
+        newItem1.style.width = '10vw';
+        newItem2.style.width = '10vw';
+        newItem3.style.width = '3vw';
+
+        newDiv.style.width = '4vw';
+        newDiv.style.height = '4vh';
+        newDiv.style.display = 'flex';
+        newDiv.style.justifyContent = 'center';
+        newDiv.style.alignItems = 'center';
+
+        newIcon.style.paddingTop = '2px';
+        newIcon.style.cursor = 'pointer';
+
+        //put img for icon
+        newIcon.innerHTML = '<img src="https://tinyurl.com/2hnchrcy" width="10" height="10">';
+    }
+
+    //push item's prices in the array
+    sumArr.push(Number(itemPrice))
+    //new const with array sum
+    const totalArr = sumArr.reduce((a,b) => a+b);
+    //change inner text of total
+    cartTotal.innerHTML = `Total: $${totalArr}`;
+
+    //append pack text to text p
+    newItem1.appendChild(valueItem);
+
+    //append pack size to size p
+    newItem2.appendChild(sizeItem);
+
+    //append pack price to price p
+    newItem3.appendChild(newPrice);
+     
+    //append pack p, size p, price p and button to list item
+     newItem.appendChild(newItem1);
+     newItem.appendChild(newItem2);
+     newItem.appendChild(newItem3);
+     newItem.appendChild(newDiv);
+
+     //append list item to list
+     newList.appendChild(newItem);
+    //append list to cart
+     listBox.appendChild(newList);
+
+    /*  newIcon.addEventListener('click', deleteItem) 
+
+     function deleteItem() {
+         subArr.splice()
+         newItem.remove()
+     }; */
+
+}
 

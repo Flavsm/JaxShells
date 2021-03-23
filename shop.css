@@ -160,12 +160,21 @@ body {
     height: 75vh;
     line-height: 2;
     font-size: 12px;
+    /* background-color: greenyellow; */
+   
 }
 
 .listBox {
     list-style: none;
 }
 
+.cartTotalBox {
+    /* background-color: greenyellow; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30vw;
+}
 .checkOutBox {
     display: flex;
     justify-content: center;
@@ -189,22 +198,20 @@ body {
 }
 
 .packsBox {
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    /* display: -webkit-box; */   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    /* display: -ms-flexbox; */  /* TWEENER - IE 10 */
+    /* display: -webkit-flex; */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 7vh;
     height: 92vh;
     width: 100vw;
-    background-color: darkblue;
+    /* background-color: darkblue; */
 }
 
 .packsList {
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -213,7 +220,7 @@ body {
     height: 84vh;
     width: 60vw;
     list-style: none;
-    background-color: darkgoldenrod;
+    /* background-color: darkgoldenrod; */
 }
 
 .packItem {
@@ -222,30 +229,27 @@ body {
     align-items: center;
     width: 55vw; 
     height: 20vh;
-    background-color: darkgreen;
+    /* background-color: darkgreen; */
 }
 
 .packItem img {
     width: 120px;
-    height: 93px;
+    height: 90px;
 }
 
 .textBox {
-    display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;  /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     justify-content: -webkit-flex;;
     justify-content: --webkit-box;
     align-items: center;
-    /* background-image:linear-gradient(135deg, #bcd4e6, pink); */
-    width: 25vw;
-    height: 13vh;
+    background-image:linear-gradient(135deg, #bcd4e6, pink);
+    width: 120px;
+    height: 90px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-color: darkmagenta;
+    /* background-color: darkmagenta; */
 }
 
 .eachPackBox {
@@ -253,11 +257,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 20vw;
+    height: 7vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 11px;
     padding-top: 3px;
-    background-color: darkorange;
+    /* background-color: darkorange; */
 }
 
 .sizeBox {
@@ -266,9 +271,9 @@ body {
     justify-content: space-evenly;
     align-items: center;
     width: 20vw;
-    height: 18vh;
+    height: 7vh;
     margin: 5px;
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
 }
 
 .sizeBox select{
@@ -293,10 +298,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
     width: 20vw;
+    height: 7vh;
     margin: 2px;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 .buttonBox button {
@@ -503,19 +508,26 @@ a, a:hover, a:focus, a:active {
             }
 
             .itemsBox {
-
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: flex-start;
-                width: 18vw;
+                width: 19vw;
                 height: 73vh;
-                
                 line-height: 2;
+                /* background-color: lime; */
             }
 
             .listBox {
                 list-style: none;
+            }
+
+            .cartTotalBox {
+                /* background-color: greenyellow; */
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 15vw;
             }
 
             .checkOutBox {
@@ -569,8 +581,8 @@ a, a:hover, a:focus, a:active {
             }
             
             .packItem img {
-                width: 230px;
-                height: 231px;
+                width: 200px;
+                height: 230px;
             }
 
             .textBox {
@@ -579,8 +591,8 @@ a, a:hover, a:focus, a:active {
                 justify-content: space-between;
                 align-items: center;
                 background-image:linear-gradient(135deg, pink, #bcd4e6);
-                width: 16vw;
-                height: 32vh;
+                width: 200px;
+                height: 230px;
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
             }
