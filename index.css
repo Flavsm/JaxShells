@@ -618,8 +618,8 @@ button:hover, select:hover{
                 font-style: italic;
             }
 
-            .sizeList1 :nth-child(1) {
-                width: 15vw;
+            .sizeList1  {
+                width: 18vw;
             }
 
             .sizeBox img {
