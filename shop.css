@@ -211,6 +211,7 @@ body {
 .packItem {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 60vw; 
     height: 18vh;
 }
@@ -334,7 +335,7 @@ button:hover, select:hover{
                 flex-direction: column;
                 justify-content: space-between;
                 background-color:  	#FFF5EE;
-                height: 98vh;
+                height: 100vh;
             }
             
             .navBar {
@@ -423,7 +424,7 @@ button:hover, select:hover{
                 height: 5vh;
                 font-family: 'Lato', sans-serif;
                 font-size: 15px;
-                font-weight: bolder;
+                font-weight: 500;
                 font-style: italic;
                 text-decoration: none;
                 color: black;
@@ -517,18 +518,19 @@ button:hover, select:hover{
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
-                margin-top: 6vh;
-                height: 82vh;
+                margin-top: 7vh;
+                height: 83vh;
                 font-size: 20px;
             }
             
             .packsList {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
                 justify-content: space-around;
                 align-items: center;
-                flex-wrap: wrap;
-                height: 82vh;
+                margin-top: 0vh;
+                height: 83vh;
                 width: 80vw;
                 list-style: none; 
             }
@@ -536,6 +538,7 @@ button:hover, select:hover{
             .packItem {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 width: 30vw; 
             }
             
@@ -614,7 +617,7 @@ button:hover, select:hover{
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                min-height: 12vh;
+                min-height: 10vh;
                 background-color: pink;
                 border-bottom: 1px solid whitesmoke;
             }

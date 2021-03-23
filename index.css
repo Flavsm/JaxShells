@@ -228,6 +228,9 @@ main {
 }
 
 .colorText1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 45vw;
     height: 10vh;  
     font-family: 'Lato', sans-serif;
@@ -253,7 +256,7 @@ main {
     width: 60vw;
     height: 25vh;
     color: black;
-    margin-left: 5vw;
+    margin-left: 9vw;
 }
 
 .sizeList1 {
@@ -276,6 +279,9 @@ main {
 }
 
 .packetText1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 45vw;
     height: 10vh;
     font-family: 'Lato', sans-serif;
@@ -303,11 +309,11 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vw;
-    height: 5vh;
+    width: 18vw;
+    height: 8vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     background-color: #bcd4e6;
     border-radius: 2px;
     box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
