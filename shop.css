@@ -193,11 +193,12 @@ body {
     display: -ms-flexbox;  /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin-top: 7vh;
     height: 92vh;
     width: 100vw;
+    background-color: darkblue;
 }
 
 .packsList {
@@ -205,13 +206,14 @@ body {
     display: -ms-flexbox;  /* TWEENER - IE 10 */
     display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     height: 84vh;
-    width: 100vw;
+    width: 60vw;
     list-style: none;
+    background-color: darkgoldenrod;
 }
 
 .packItem {
@@ -219,12 +221,13 @@ body {
     justify-content: center;
     align-items: center;
     width: 55vw; 
-    height: 16vh;
+    height: 20vh;
+    background-color: darkgreen;
 }
 
 .packItem img {
     width: 120px;
-    height: 90px;
+    height: 93px;
 }
 
 .textBox {
@@ -237,11 +240,12 @@ body {
     justify-content: -webkit-flex;;
     justify-content: --webkit-box;
     align-items: center;
-    background-image:linear-gradient(135deg, #bcd4e6, pink);
-    width: 120px;
-    height: 90px;
+    /* background-image:linear-gradient(135deg, #bcd4e6, pink); */
+    width: 25vw;
+    height: 13vh;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    background-color: darkmagenta;
 }
 
 .eachPackBox {
@@ -253,6 +257,7 @@ body {
     font-weight: 400;
     font-size: 11px;
     padding-top: 3px;
+    background-color: darkorange;
 }
 
 .sizeBox {
@@ -260,12 +265,16 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 18vw;
+    width: 20vw;
     height: 18vh;
     margin: 5px;
+    background-color: darkseagreen;
 }
 
 .sizeBox select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2vh;
     width: 18vw; 
     margin: 1px;
@@ -282,12 +291,12 @@ body {
 
 .buttonBox {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 10vh;
     width: 20vw;
     margin: 2px;
+    background-color: greenyellow;
 }
 
 .buttonBox button {
@@ -295,8 +304,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 2.5vh;
-    width: 10vw;
+    width: 13vw;
     font-size: 7px;
+    border-radius: 5px;
+    background-color: #bcd4e6;
+    box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.3);
+    border: 0.5 solid black;
     -webkit-appearance: none;
 }
 
@@ -524,7 +537,7 @@ button:hover, select:hover{
 
             .packsBox  {
                 display: flex;
-                justify-content: space-around;
+                justify-content: center;
                 align-items: center;
                 margin-top: 7vh;
                 height: 83vh;
@@ -552,7 +565,7 @@ button:hover, select:hover{
             
             .packItem img {
                 width: 230px;
-                height: 230px;
+                height: 231px;
             }
 
             .textBox {
@@ -561,8 +574,8 @@ button:hover, select:hover{
                 justify-content: space-between;
                 align-items: center;
                 background-image:linear-gradient(135deg, pink, #bcd4e6);
-                min-width: 200px;
-                min-height: 230px;
+                width: 16vw;
+                height: 32vh;
                 border-top-right-radius: 5px;
                 border-bottom-right-radius: 5px;
             }
