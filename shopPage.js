@@ -258,7 +258,7 @@ function addToCart(x, elem) {
 
         newIcon.style.paddingTop = '2px';
         newIcon.style.cursor = 'pointer';
-
+        newIcon.style.color = 'black';
         //put img for icon
         newIcon.innerHTML = '<img src="https://tinyurl.com/2hnchrcy" width="15" height="15">';
     } else {
@@ -267,12 +267,12 @@ function addToCart(x, elem) {
         newItem.style.width = '26w';
         newItem.style.height = '4vh';
         
-        newItem1.style.width = '10vw';
-        newItem2.style.width = '10vw';
-        newItem3.style.width = '3vw';
+        newItem1.style.width = '11vw';
+        newItem2.style.width = '11vw';
+        newItem3.style.width = '4vw';
 
-        newDiv.style.width = '4vw';
-        newDiv.style.height = '4vh';
+        newDiv.style.width = '3vw';
+        newDiv.style.height = '3vh';
         newDiv.style.display = 'flex';
         newDiv.style.justifyContent = 'center';
         newDiv.style.alignItems = 'center';
