@@ -265,12 +265,15 @@ function addToCart(x, elem) {
     } else {
         newList.style.fontSize = '9px';
 
-        newItem.style.width = '26w';
+        newItem.style.width = '32w';
         newItem.style.height = '4vh';
         
-        newItem1.style.width = '11vw';
-        newItem2.style.width = '11vw';
+        newItem1.style.width = '13vw';
+        /* newItem1.style.backgroundColor = 'red'; */
+        newItem2.style.width = '13vw';
+        /* newItem2.style.backgroundColor = 'blue'; */
         newItem3.style.width = '4vw';
+        /* newItem3.style.backgroundColor = 'green'; */
 
         newDiv.style.display = 'flex';
         newDiv.style.justifyContent = 'center';
@@ -279,11 +282,11 @@ function addToCart(x, elem) {
         newDiv.style.height = '3vh';
 
         newIcon.style.display = 'flex';
-        newIcon.style.paddingTop = '2px';
+        /* newIcon.style.paddingTop = '1px'; */
         newIcon.style.cursor = 'pointer';
 
         //put img for icon
-        newIcon.innerHTML = '<img src="./delete.png" width="10" height="10">';
+        newIcon.innerHTML = '<img src="./delete.png" width="18" height="18">';
     }
 
     //push item's prices in the array

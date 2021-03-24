@@ -224,19 +224,20 @@ main {
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    min-height: 50vh;
+    min-height: 40vh;
 }
 
 .colorText1 {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 45vw;
     height: 10vh;  
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-style: italic;
     font-size: 16px;
+    
 }
 
 .colorBoxImg img, .sizeBoxImg img, .packetBoxImg img {
@@ -281,7 +282,7 @@ main {
 .packetText1 {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 45vw;
     height: 10vh;
     font-family: 'Lato', sans-serif;

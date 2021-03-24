@@ -156,12 +156,11 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 26vw;
+    width: 32vw;
     height: 75vh;
     line-height: 2;
     font-size: 12px;
     /* background-color: greenyellow; */
-   
 }
 
 .listBox {
