@@ -90,7 +90,7 @@ body {
     height: 5vh;
 }
     
-#home, #about, #shop {
+#home, #about  {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -106,7 +106,7 @@ body {
     background-color: #FFF5EE;
 }
 
-#home:hover, #about:hover, #shop:hover{
+#home:hover, #about:hover{
     background-color: #bcd4e6;
     box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
 }
@@ -299,7 +299,7 @@ a, a:hover, a:focus, a:active {
                         height: 5vh;
                     }
                         
-                    #home, #shop, #about {
+                    #home, #shop{
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
@@ -315,7 +315,7 @@ a, a:hover, a:focus, a:active {
                         background-color: #FFF5EE;;
                     }
 
-                    #home:hover, #shop:hover, #about:hover{
+                    #home:hover, #shop:hover {
                         background-color: #bcd4e6;
                         box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
                     }
