@@ -1,2 +1,2 @@
 # JaxShells
-website to sell seashells
+website for a seashell seller 
