@@ -2,7 +2,6 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -117,6 +116,7 @@ body {
     justify-content: flex-end;
     width: 100vw;
 }
+
 .cartList {
     display: flex;
     flex-direction: column;
@@ -160,7 +160,6 @@ body {
     height: 75vh;
     line-height: 2;
     font-size: 12px;
-    /* background-color: greenyellow; */
 }
 
 .listBox {
@@ -168,7 +167,6 @@ body {
 }
 
 .cartTotalBox {
-    /* background-color: greenyellow; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -198,9 +196,6 @@ body {
 }
 
 .packsBox {
-    /* display: -webkit-box; */   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    /* display: -ms-flexbox; */  /* TWEENER - IE 10 */
-    /* display: -webkit-flex; */ /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,7 +204,6 @@ body {
 }
 
 .packsList {
-    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -226,7 +220,6 @@ body {
     align-items: center;
     width: 55vw; 
     height: 20vh;
-    /* background-color: darkgreen; */
 }
 
 .packItem img {
@@ -246,7 +239,6 @@ body {
     height: 90px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* background-color: darkmagenta; */
 }
 
 .eachPackBox {
@@ -259,7 +251,6 @@ body {
     font-weight: 400;
     font-size: 11px;
     padding-top: 3px;
-    /* background-color: darkorange; */
 }
 
 .sizeBox {
@@ -270,7 +261,6 @@ body {
     width: 20vw;
     height: 7vh;
     margin: 5px;
-    /* background-color: darkseagreen; */
 }
 
 .sizeBox select{
@@ -298,7 +288,6 @@ body {
     width: 20vw;
     height: 7vh;
     margin: 2px;
-    /* background-color: greenyellow; */
 }
 
 .buttonBox button {
@@ -311,7 +300,6 @@ body {
     border-radius: 5px;
     background-color: #bcd4e6;
     box-shadow: 2px 2px 6px 2px rgba(0,0,0,0.3);
-    /* border: 0.5 solid black; */
     -webkit-appearance: none;
 }
 
@@ -513,7 +501,6 @@ a, a:hover, a:focus, a:active {
                 width: 19vw;
                 height: 73vh;
                 line-height: 2;
-                /* background-color: lime; */
             }
 
             .listBox {
@@ -521,7 +508,6 @@ a, a:hover, a:focus, a:active {
             }
 
             .cartTotalBox {
-                /* background-color: greenyellow; */
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;

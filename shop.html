@@ -17,7 +17,7 @@
             <ul class=menuList>
                 <li>
                     <div div="dropBox">
-                        <button class="menuButton">
+                        <button type="button" class="menuButton">
                             <i class="dropButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z"/></svg></i>
                         </button>
                         <div class="dropDown">
@@ -31,7 +31,7 @@
                     </div>
                 </li>
                 <li>
-                    <button class=cartButton>
+                    <button type="button" class=cartButton>
                         <i><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path d="M16.53 7l-.564 2h-15.127l-.839-2h16.53zm-14.013 6h12.319l.564-2h-13.722l.839 2zm5.983 5c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm11.305-15l-3.432 12h-13.017l.839 2h13.659l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"/></svg></i>
                     </button>
                 </li>
@@ -49,10 +49,10 @@
                     <ul class="listBox"></ul>
                 </div>
                 <div class="cartTotalBox">
-                    <h4 id="cart-total">Total: $</h4>
+                    <h4 id="cart-total">Total: $<p></p></h4>
                 </div>
                 <div class="checkOutBox">
-                    <button class="checkOutBtn">Check-out</button>
+                    <button type="button" class="checkOutBtn">Check-out</button>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
                             <p id="price-tag-1">$1 per pack</p>
                         </div>
                         <div class=buttonBox>
-                            <button class="addBtn" id="add5">Add</button>
+                            <button type="button" class="addBtn" id="add5">Add</button>
                         </div>
                     </div>
                 </li>
@@ -104,7 +104,7 @@
                             <p id="price-tag-2">$2 per pack</p>
                         </div>
                         <div class=buttonBox>
-                            <button class="addBtn" id="add10">Add</button>
+                            <button type="button" class="addBtn" id="add10">Add</button>
                         </div>
                     </div>
                 </li>
@@ -128,7 +128,7 @@
                             <p id="price-tag-3">$3 per pack</p>
                         </div>
                         <div class=buttonBox>
-                            <button class="addBtn" id="add20">Add</button>
+                            <button type="button" class="addBtn" id="add20">Add</button>
                         </div>
                     </div>
                 </li>
@@ -176,7 +176,7 @@
                             <p id="price-tag-4">$4 per pack</p>
                         </div>
                         <div class="buttonBox">
-                            <button class="addBtn" id="add50">Add</button>
+                            <button type="button" class="addBtn" id="add50">Add</button>
                         </div>
                     </div>
                 </li>
@@ -191,6 +191,7 @@
             </div>
         </footer>
     </div>
-    <script src="./shopPage.js"></script>
+    <script type='text/javascript' src="./shopPage.js"></script>
+    <script type='text/javascript' src="./cartElement.js"></script>
 </body>
 </html>

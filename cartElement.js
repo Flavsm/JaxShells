@@ -1,12 +1,15 @@
 //SELECTORS
 
-const dropBtn = document.querySelector('.menuButton');
+/* const dropBtn = document.querySelector('.menuButton');
 const dropContent = document.querySelector('.dropDown');
+const navJax = document.getElementById("navjax");
 const cartBtn = document.querySelector('.cartButton');
 const cartBox = document.querySelector('.cartBox');
-const mainPage = document.querySelector('.mainPage');
 
-/* const firstSelect = document.querySelector('.selectOne');
+const mainPage = document.querySelector('.mainPage');
+const mostElemBox = document.querySelector('.mostElemBox'); */
+
+const firstSelect = document.querySelector('.selectOne');
 const secondSelect = document.querySelector('.selectTwo');
 const thirdSelect = document.querySelector('.selectThree');
 const fourthSelect = document.querySelector('.selectFour');
@@ -17,27 +20,29 @@ const pack3 = document.getElementById('price-tag-3');
 const pack4 = document.getElementById('price-tag-4');
 
 const addBtn = document.querySelectorAll('.addBtn');
-const removeBtn = document.querySelectorAll('.removeBtn');
 const itemsBox = document.querySelector('.itemsBox');
 const listBox = document.querySelector('.listBox');
 
-const cartTotal = document.getElementById('cart-total'); */
+const cartTotal = document.getElementById('cart-total');
+
+const checkOutBtn = document.querySelector('.checkOutBtn');
 
 //EVENT LISTENERS
 
-//event to toggle menu
+/* //event to toggle menu
 dropBtn.addEventListener('click', openMenu);
 dropContent.addEventListener('mouseleave', closeMenu);
 
 //event to toggle cart
-cartBtn.addEventListener('click', showCart);
+cartBtn.addEventListener('click', showCart); */
 
-/* firstSelect.addEventListener('change',  () => {priceChange(firstSelect, pack1)});
+//add event listener to each select
+firstSelect.addEventListener('change',  () => {priceChange(firstSelect, pack1)});
 secondSelect.addEventListener('change', () => {priceChange(secondSelect, pack2)});
 thirdSelect.addEventListener('change', () => {priceChange(thirdSelect, pack3)});
 fourthSelect.addEventListener('change', () => {priceChange(fourthSelect, pack4)});
 
-// add event listener to each pack's button
+//add event listener to each pack's button
 addBtn.forEach(x => {
     if (x.id === 'add5') {
         x.addEventListener('click', () => addToCart('5', firstSelect));
@@ -48,7 +53,10 @@ addBtn.forEach(x => {
     } else {
         x.addEventListener('click', () => addToCart('50', fourthSelect));
     }
-}); */
+});
+
+//add event listener to check-out button 
+checkOutBtn.addEventListener('click', checkOutPage);
 
 //FUNCTIONS
 
@@ -62,52 +70,12 @@ function closeMenu () {
     dropContent.classList.remove('show');
 }
 
-//check media width
-const mediaSize = window.matchMedia("(min-width: 600px)");
 
-//toggle cart, adapt main element
-function showCart() {
-
-    if (cartBox.style.display !== "flex") {
-        cartBox.style.display = "flex";
-        mainPage.style.opacity = 0.8;
-        if(mediaSize.matches) {
-            mainPage.style.width = "80vw";
-            mainPage.animate( {
-            width: ['100vw', '80vw'],
-            easing: 'ease-in',
-            }, 350);
-        } else {
-            mainPage.style.width = "65vw";
-            mainPage.animate( {
-            width: ['100vw', '65vw'],
-            easing: 'ease-in',
-        }, 350);
-        }
-    } else {
-        cartBox.style.display = "none";
-        mainPage.style.opacity = 1;
-        if(mediaSize.matches) {
-            mainPage.style.width = "100vw";
-            mainPage.animate( {
-            width: ['80vw', '100vw'],
-            easing: 'ease-in',
-            }, 350);
-        } else {
-            mainPage.style.width = "100vw";
-            mainPage.animate( {
-            width: ['65vw', '100vw'],
-            easing: 'ease-in',
-            }, 350);
-        }
-    } 
-}
-
-/* //for each select set up a different price according to pack size
+//for each select set up a different price according to pack size
 function priceChange (elem, pack) {
     
-    let x = elem.value;
     let price;
+    let itemValue = elem.value; 
 
     if (elem === firstSelect) {
         price = 1;
@@ -119,7 +87,7 @@ function priceChange (elem, pack) {
         price = 4;
     };
 
-    switch (x) {
+    switch (itemValue) {
         case "0":
             pack.innerHTML = `$ ${price} per pack`;
             break;
@@ -152,10 +120,10 @@ function priceChange (elem, pack) {
 let totalSumArr = 0;
 
 //if add button clicked, add item to cart
-function addToCart(x, elem) {
+function addToCart(number, elem) {
 
+    let itemValue = elem.value; 
     let itemPrice;
-    let z = elem.value;  
     let itemSize = elem.options[elem.selectedIndex].text;
 
     if (elem === firstSelect) {
@@ -168,7 +136,7 @@ function addToCart(x, elem) {
         price = 4;
     };
 
-   switch (z) {
+   switch (itemValue) {
     case "0":
         itemPrice = `${price}`;
         break;
@@ -213,7 +181,7 @@ function addToCart(x, elem) {
     //create new item for list - type of pack
     const newItem1 = document.createElement('p');
     //create text of list item
-    const valueItem = document.createTextNode(`Pack of ${x}`);
+    const valueItem = document.createTextNode(`Pack of ${number}`);
 
     //create new item for list - size of pack
     const newItem2 = document.createElement('p');
@@ -315,15 +283,10 @@ function addToCart(x, elem) {
 
      //append list item to list
      newList.appendChild(newItem);
+
     //append list to cart
      listBox.appendChild(newList);
-
-     
-
 }
 
-*/
 
-function checkOutPage() {
-    window.location.href='./checkOut.html';
-}
+

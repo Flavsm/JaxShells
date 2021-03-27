@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -49,8 +48,8 @@ header {
     min-width: 18vw;
     align-items: center;
     margin-right: 12px;
-    
 }
+
 .dropBox {
     position: relative;
     display: inline-flex;
@@ -58,6 +57,7 @@ header {
     align-items: center;
     justify-content: space-evenly;
 }
+
 .menuButton, .cartButton{
     background: none;
     border: none;
@@ -120,6 +120,7 @@ header {
     justify-content: flex-end;
     width: 100vw;
 }
+
 .cartList {
     display: flex;
     flex-direction: column;
@@ -237,7 +238,6 @@ main {
     font-weight: 400;
     font-style: italic;
     font-size: 16px;
-    
 }
 
 .colorBoxImg img, .sizeBoxImg img, .packetBoxImg img {
@@ -376,7 +376,6 @@ a, a:hover, a:focus, a:active {
                 min-height: 7vh;
                 border-bottom: 1px solid whitesmoke;
                 background-color: pink;
-                
             }
             
             .showNavName {
@@ -396,8 +395,8 @@ a, a:hover, a:focus, a:active {
                 list-style: none;
                 min-width: 15vw;
                 align-items: center;
-                
             }
+
             .dropBox {
                 position: relative;
                 display: inline-flex;
@@ -405,6 +404,7 @@ a, a:hover, a:focus, a:active {
                 align-items: center;
                 justify-content: space-evenly;
             }
+
             .menuButton, .cartButton{
                 background: none;
                 border: none;
@@ -421,6 +421,7 @@ a, a:hover, a:focus, a:active {
                 width: 32px;
                 height: 32px;
             }
+
             .dropDown {
                 display: none;
             }
@@ -467,6 +468,7 @@ a, a:hover, a:focus, a:active {
                 justify-content: flex-end;
                 width: 100vw;
             }
+
             .cartList {
                 display: flex;
                 flex-direction: column;
@@ -491,6 +493,7 @@ a, a:hover, a:focus, a:active {
                     width: 20vw;
                 }
             }
+
             .cartTitleBox {
                 display: flex;
                 justify-content: center;
@@ -520,6 +523,7 @@ a, a:hover, a:focus, a:active {
                 width: 15vw;
                 height: 10vh;
             }
+            
             .checkOutBtn {
                 display: flex;
                 justify-content: center;

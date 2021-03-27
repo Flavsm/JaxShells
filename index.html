@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="index.css">
     <title>Jax Shells</title>
 </head>
-<body>
+<body class="indexBody">
     <header>
         <nav class="navBar">
             <ul class=menuList>
                 <li>
                     <div div="dropBox">
-                        <button class="menuButton">
+                        <button type="button" class="menuButton">
                             <i class="dropButton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path
                                         d="M4 22h-4v-4h4v4zm0-12h-4v4h4v-4zm0-8h-4v4h4v-4zm3 0v4h17v-4h-17zm0 12h17v-4h-17v4zm0 8h17v-4h-17v4z" />
@@ -34,13 +34,11 @@
                     </div>
                 </li>
                 <li>
-                    <button class=cartButton>
-                        <!-- <a href="./cart.html"> -->
+                    <button type="button" class=cartButton>
                         <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
                                     d="M16.53 7l-.564 2h-15.127l-.839-2h16.53zm-14.013 6h12.319l.564-2h-13.722l.839 2zm5.983 5c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm11.305-15l-3.432 12h-13.017l.839 2h13.659l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z" />
                             </svg></i>
-                        <!-- </a> -->
                     </button>
                 </li>
             </ul>
@@ -56,16 +54,15 @@
                 <div class="itemsBox">
                     <ul class="listBox"></ul>
                 </div>
+                <div class="cartTotalBox">
+                    <h4 id="cart-total">Total: $<p></p></h4>
+                </div>
                 <div class="checkOutBox">
-                    <button class="checkOutBtn">Check-out</button>
+                    <button type="button" class="checkOutBtn">Check-out</button>
                 </div>
             </div>
         </div>
         </div>
-        <!-- <div class="titleBox titleBox1">
-            <h1>Jax Shells</h1>
-            <h3>Jacksonville Sourced Seashells</h3>
-        </div> -->
     </header>
     <div class="mostElemBox">    
         <div class="titleBox titleBox1">
@@ -122,6 +119,7 @@
             </div>
         </footer>
     </div>
-    <script src="./mainPage.js"></script>
+    <script type='text/javascript' src="./mainPage.js"></script>
+    <script type='text/javascript' src="./cartElement.js"></script>
 </body>
 </html>

@@ -2,16 +2,24 @@
 
 const dropBtn = document.querySelector('.menuButton');
 const dropContent = document.querySelector('.dropDown');
-const dropOptions = document.querySelector('.option');
+const navJax = document.getElementById("navjax");
 const cartBtn = document.querySelector('.cartButton');
 const cartBox = document.querySelector('.cartBox');
 const mostElemBox = document.querySelector('.mostElemBox');
 
+const checkOutBtn = document.querySelector('.checkOutBtn');
+
 //EVENT LISTENERS
 
+//event to toggle menu
 dropBtn.addEventListener('click', openMenu);
 dropContent.addEventListener('mouseleave', closeMenu);
+
+//event to toggle cart
 cartBtn.addEventListener('click', showCart);
+
+//add event listener to check-out button 
+checkOutBtn.addEventListener('click', checkOutPage);
 
 //FUNCTIONS
 
@@ -25,22 +33,24 @@ function closeMenu () {
     dropContent.classList.remove('show');
 }
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {displayNavText()};
 
 //after scrolling, show or hide name top left
-function myFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("navjax").className = "showNavName animate__animated animate__fadeIn";
-    document.getElementById("navjax").innerText = ('Jax Shells');
-  } else {
-    document.getElementById("navjax").className = "animate__animated animate__fadeOut";
-    document.getElementById("navjax").innerText = "";
+function displayNavText() {
+if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  navJax.className = "showNavName animate__animated animate__fadeIn";
+  navJax.innerText = ('Jax Shells');
+} else {
+  navJax.className = "animate__animated animate__fadeOut";
+  navJax.innerText = "";
   }
 }
 
+//check media width
+const mediaSize = window.matchMedia("(min-width: 600px)");
+
 //toggle cart, adapt main element
 function showCart() {
-  const mediaSize = window.matchMedia("(min-width: 600px)");
 
   if (cartBox.style.display !== "flex") {
       cartBox.style.display = "flex";
@@ -75,4 +85,8 @@ function showCart() {
           }, 350);
       }
   } 
+}
+
+function checkOutPage() {
+  window.location.href='./checkOut.html';
 }
