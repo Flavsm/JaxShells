@@ -37,9 +37,25 @@ body {
     color: black;
 }
 
+.cartCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 20px;
+    margin-top: -18px;
+    margin-left: 15px;
+    background-color: #bcd4e6;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+
 .menuList {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style: none;
     min-width: 18vw;
     align-items: center;
@@ -58,6 +74,10 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.cartButton {
+    display: none;
 }
 
 .dropButton svg {
@@ -79,23 +99,27 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 13vw;
+    /* width: 13vw; */
+    width: 9vw;
+    /* height: 15vh; */
     height: 10vh;
     margin-top: 2px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 }
 
 .option {
-    width: 13vw;
+    /* width: 13vw; */
+    width: 9vw;
     height: 5vh;
 }
     
-#home, #about, #shop {
+#home, #shop/* , #about */ {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding-left: 5px;
-    width: 13vw;
+    /* width: 13vw; */
+    width: 9vw;
     height: 5vh;
     font-family: 'Lato', sans-serif;
     font-weight: 400;
@@ -164,6 +188,16 @@ body {
 
 .listBox {
     list-style: none;
+    animation: roll-in 0.5s ease-out 1;
+}
+
+@keyframes roll-in {
+    0% {
+        transform: translateX(130px)
+    } 
+    100% {
+        transform: translateX(0)
+    }
 }
 
 .cartTotalBox {
@@ -202,6 +236,18 @@ body {
     align-items: center;
     height: 100vh;
     margin-top: 7vh;
+    width: 100vw;
+}
+
+.mainBox h3 {
+    width: 80vw;
+    text-align: center;
+    text-align-last: center;
+}
+
+#portfolio {
+    font-family: 'Fjord One', serif;
+    color: rgb(243, 167, 26);
 }
 
 button:hover, select:hover{
@@ -245,12 +291,29 @@ a, a:hover, a:focus, a:active {
                     #navjax {
                         color: black;
                     }
+
+                    .cartCount {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        width: 2vw;
+                        height: 2vw;
+                        border-radius: 20px;
+                        margin-top: -30px;
+                        margin-left: 20px;
+                        background-color: #bcd4e6;
+                        font-family: 'Lato', sans-serif;
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
                     
                     .menuList {
                         display: flex;
-                        justify-content: space-evenly;
+                        justify-content: space-between;
                         list-style: none;
-                        min-width: 15vw;
+                        /* min-width: 15vw; */
+                        min-width: 5vw;
                         align-items: center;
                     }
                     
@@ -269,6 +332,10 @@ a, a:hover, a:focus, a:active {
                         font-size: 15px;
                     }
                     
+                    .cartButton {
+                        display: none;
+                    }
+
                     .dropButton svg {
                         width: 24px;
                         height: 24px;
@@ -287,24 +354,28 @@ a, a:hover, a:focus, a:active {
                         position: absolute;
                         display: flex;
                         flex-direction: column;
-                        width: 6vw;
-                        height: 15vh;
+                        /* width: 6vw; */
+                        width: 4vw;
+                        /* height: 15vh; */
+                        height: 10vh;
                         margin-top: 5px;
                         box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
                     }
 
                     .option {
                         cursor: pointer;
-                        width: 6vw;
+                        /* width: 6vw; */
+                        width: 4vw;
                         height: 5vh;
                     }
                         
-                    #home, #shop, #about {
+                    #home, #shop/* , #about */ {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
                         padding-left: 5px;
-                        width: 6vw;
+                        /* width: 6vw; */
+                        width: 4vw;
                         height: 5vh;
                         font-family: 'Lato', sans-serif;
                         font-size: 15px;
@@ -313,6 +384,10 @@ a, a:hover, a:focus, a:active {
                         text-decoration: none;
                         color: black;
                         background-color: #FFF5EE;;
+                    }
+
+                    #about {
+                        display: none;
                     }
 
                     #home:hover, #shop:hover, #about:hover{
@@ -372,6 +447,16 @@ a, a:hover, a:focus, a:active {
         
                     .listBox {
                         list-style: none;
+                        animation: roll-in 0.5s ease-out 1;
+                    }
+        
+                    @keyframes roll-in {
+                        0% {
+                            transform: translateX(130px)
+                        } 
+                        100% {
+                            transform: translateX(0)
+                        }
                     }
         
                     .cartTotalBox {
@@ -411,6 +496,17 @@ a, a:hover, a:focus, a:active {
                         align-items: center;
                         height: 100vh;
                         margin-top: 7vh;
+                    }
+
+                    .mainBox h3 {
+                        width: 100vw;
+                        text-align: none;
+                        text-align-last: none;
+                    }
+
+                    #portfolio {
+                        font-family: 'Fjord One', serif;
+                        color: rgb(243, 167, 26);
                     }
 
                     button:hover, select:hover{

@@ -3,7 +3,7 @@
 const dropBtn = document.querySelector('.menuButton');
 const dropContent = document.querySelector('.dropDown');
 const navJax = document.getElementById("navjax");
-const cartBtn = document.querySelector('.cartButton');
+const cartBtn = document.querySelector('.cartBtn');
 const cartBox = document.querySelector('.cartBox');
 const mostElemBox = document.querySelector('.mostElemBox');
 
@@ -25,24 +25,24 @@ checkOutBtn.addEventListener('click', checkOutPage);
 
 //show dropdown menu
 function openMenu() {
-    dropContent.classList.toggle('show');
+  dropContent.classList.toggle('show');
 };
 
 //hide dropdown menu
-function closeMenu () {
-    dropContent.classList.remove('show');
+function closeMenu() {
+  dropContent.classList.remove('show');
 }
 
-window.onscroll = function() {displayNavText()};
+window.onscroll = function () { displayNavText() };
 
 //after scrolling, show or hide name top left
 function displayNavText() {
-if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  navJax.className = "showNavName animate__animated animate__fadeIn";
-  navJax.innerText = ('Jax Shells');
-} else {
-  navJax.className = "animate__animated animate__fadeOut";
-  navJax.innerText = "";
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    navJax.className = "showNavName animate__animated animate__fadeIn";
+    navJax.innerText = ('Jax Shells');
+  } else {
+    navJax.className = "animate__animated animate__fadeOut";
+    navJax.innerText = "";
   }
 }
 
@@ -53,40 +53,40 @@ const mediaSize = window.matchMedia("(min-width: 600px)");
 function showCart() {
 
   if (cartBox.style.display !== "flex") {
-      cartBox.style.display = "flex";
-      mostElemBox.style.opacity = 0.8;
-      if(mediaSize.matches) {
-        mostElemBox.style.width = "80vw";
-          mostElemBox.animate( {
-          width: ['100vw', '80vw'],
-          easing: 'ease-in',
-          }, 350);
-      } else {
-        mostElemBox.style.width = "70vw";
-          mostElemBox.animate( {
-          width: ['100vw', '70vw'],
-          easing: 'ease-in',
+    cartBox.style.display = "flex";
+    mostElemBox.style.opacity = 0.8;
+    if (mediaSize.matches) {
+      mostElemBox.style.width = "80vw";
+      mostElemBox.animate({
+        width: ['100vw', '80vw'],
+        easing: 'ease-in',
+      }, 350);
+    } else {
+      mostElemBox.style.width = "70vw";
+      mostElemBox.animate({
+        width: ['100vw', '70vw'],
+        easing: 'ease-in',
       }, 350);
     }
   } else {
-      cartBox.style.display = "none";
-      mostElemBox.style.opacity = 1;
-      if(mediaSize.matches) {
-        mostElemBox.style.width = "100vw";
-          mostElemBox.animate( {
-          width: ['80vw', '100vw'],
-          easing: 'ease-in',
-          }, 350);
-      } else {
-        mostElemBox.style.width = "100vw";
-          mostElemBox.animate( {
-          width: ['70vw', '100vw'],
-          easing: 'ease-in',
-          }, 350);
-      }
-  } 
+    cartBox.style.display = "none";
+    mostElemBox.style.opacity = 1;
+    if (mediaSize.matches) {
+      mostElemBox.style.width = "100vw";
+      mostElemBox.animate({
+        width: ['80vw', '100vw'],
+        easing: 'ease-in',
+      }, 350);
+    } else {
+      mostElemBox.style.width = "100vw";
+      mostElemBox.animate({
+        width: ['70vw', '100vw'],
+        easing: 'ease-in',
+      }, 350);
+    }
+  }
 }
 
 function checkOutPage() {
-  window.location.href='./checkOut.html';
+  window.location.href = './checkOut.html';
 }

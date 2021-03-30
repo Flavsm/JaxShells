@@ -204,6 +204,17 @@ body {
     margin-top: 7vh;
 }
 
+.mainBox h3 {
+    width: 80vw;
+    text-align: center;
+    text-align-last: center;
+}
+
+#portfolio {
+    font-family: 'Fjord One', serif;
+    color: rgb(243, 167, 26);
+}
+
 button:hover, select:hover{
     cursor: pointer;
 }
@@ -411,6 +422,17 @@ a, a:hover, a:focus, a:active {
                         align-items: center;
                         height: 100vh;
                         margin-top: 7vh;
+                    }
+
+                    .mainBox h3 {
+                        width: 100vw;
+                        text-align: none;
+                        text-align-last: none;
+                    }
+
+                    #portfolio {
+                        font-family: 'Fjord One', serif;
+                        color: rgb(243, 167, 26);
                     }
 
                     button:hover, select:hover{

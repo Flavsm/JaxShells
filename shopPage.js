@@ -2,11 +2,11 @@
 
 const dropBtn = document.querySelector('.menuButton');
 const dropContent = document.querySelector('.dropDown');
-const cartBtn = document.querySelector('.cartButton');
+const cartButton = document.querySelector('.cartButton');
 const cartBox = document.querySelector('.cartBox');
 const mainPage = document.querySelector('.mainPage');
 
-/* const firstSelect = document.querySelector('.selectOne');
+const firstSelect = document.querySelector('.selectOne');
 const secondSelect = document.querySelector('.selectTwo');
 const thirdSelect = document.querySelector('.selectThree');
 const fourthSelect = document.querySelector('.selectFour');
@@ -17,11 +17,14 @@ const pack3 = document.getElementById('price-tag-3');
 const pack4 = document.getElementById('price-tag-4');
 
 const addBtn = document.querySelectorAll('.addBtn');
-const removeBtn = document.querySelectorAll('.removeBtn');
 const itemsBox = document.querySelector('.itemsBox');
 const listBox = document.querySelector('.listBox');
 
-const cartTotal = document.getElementById('cart-total'); */
+const cartTotal = document.getElementById('cart-total');
+
+const checkOutBtn = document.querySelector('.checkOutBtn');
+
+const cartCount = document.querySelector('.cartCount');
 
 //EVENT LISTENERS
 
@@ -30,14 +33,15 @@ dropBtn.addEventListener('click', openMenu);
 dropContent.addEventListener('mouseleave', closeMenu);
 
 //event to toggle cart
-cartBtn.addEventListener('click', showCart);
+cartButton.addEventListener('click', showCart);
 
-/* firstSelect.addEventListener('change',  () => {priceChange(firstSelect, pack1)});
-secondSelect.addEventListener('change', () => {priceChange(secondSelect, pack2)});
-thirdSelect.addEventListener('change', () => {priceChange(thirdSelect, pack3)});
-fourthSelect.addEventListener('change', () => {priceChange(fourthSelect, pack4)});
+//add event listener to each select
+firstSelect.addEventListener('change', () => { priceChange(firstSelect, pack1) });
+secondSelect.addEventListener('change', () => { priceChange(secondSelect, pack2) });
+thirdSelect.addEventListener('change', () => { priceChange(thirdSelect, pack3) });
+fourthSelect.addEventListener('change', () => { priceChange(fourthSelect, pack4) });
 
-// add event listener to each pack's button
+//add event listener to each pack's button
 addBtn.forEach(x => {
     if (x.id === 'add5') {
         x.addEventListener('click', () => addToCart('5', firstSelect));
@@ -48,7 +52,10 @@ addBtn.forEach(x => {
     } else {
         x.addEventListener('click', () => addToCart('50', fourthSelect));
     }
-}); */
+});
+
+//add event listener to check-out button 
+checkOutBtn.addEventListener('click', checkOutPage);
 
 //FUNCTIONS
 
@@ -58,56 +65,53 @@ function openMenu() {
 };
 
 //hide dropdown menu
-function closeMenu () {
+function closeMenu() {
     dropContent.classList.remove('show');
 }
 
-//check media width
-const mediaSize = window.matchMedia("(min-width: 600px)");
 
-//toggle cart, adapt main element
 function showCart() {
-
+    const mediaSize = window.matchMedia("(min-width: 600px)");
     if (cartBox.style.display !== "flex") {
         cartBox.style.display = "flex";
         mainPage.style.opacity = 0.8;
-        if(mediaSize.matches) {
+        if (mediaSize.matches) {
             mainPage.style.width = "80vw";
-            mainPage.animate( {
-            width: ['100vw', '80vw'],
-            easing: 'ease-in',
+            mainPage.animate({
+                width: ['100vw', '80vw'],
+                easing: 'ease-in',
             }, 350);
         } else {
             mainPage.style.width = "65vw";
-            mainPage.animate( {
-            width: ['100vw', '65vw'],
-            easing: 'ease-in',
-        }, 350);
+            mainPage.animate({
+                width: ['100vw', '65vw'],
+                easing: 'ease-in',
+            }, 350);
         }
     } else {
         cartBox.style.display = "none";
         mainPage.style.opacity = 1;
-        if(mediaSize.matches) {
+        if (mediaSize.matches) {
             mainPage.style.width = "100vw";
-            mainPage.animate( {
-            width: ['80vw', '100vw'],
-            easing: 'ease-in',
+            mainPage.animate({
+                width: ['80vw', '100vw'],
+                easing: 'ease-in',
             }, 350);
         } else {
             mainPage.style.width = "100vw";
-            mainPage.animate( {
-            width: ['65vw', '100vw'],
-            easing: 'ease-in',
+            mainPage.animate({
+                width: ['65vw', '100vw'],
+                easing: 'ease-in',
             }, 350);
         }
-    } 
+    }
 }
 
-/* //for each select set up a different price according to pack size
-function priceChange (elem, pack) {
-    
-    let x = elem.value;
+//for each select set up a different price according to pack size
+function priceChange(elem, pack) {
+
     let price;
+    let itemValue = elem.value;
 
     if (elem === firstSelect) {
         price = 1;
@@ -119,43 +123,47 @@ function priceChange (elem, pack) {
         price = 4;
     };
 
-    switch (x) {
+    switch (itemValue) {
         case "0":
             pack.innerHTML = `$ ${price} per pack`;
             break;
         case "1":
-            pack.innerHTML = `$ ${price+1} per pack`;
+            pack.innerHTML = `$ ${price + 1} per pack`;
             break;
         case "2":
-            pack.innerHTML = `$ ${price+2} per pack`;
+            pack.innerHTML = `$ ${price + 2} per pack`;
             break;
         case "3":
-            pack.innerHTML = `$ ${price+3} per pack`;
+            pack.innerHTML = `$ ${price + 3} per pack`;
             break;
         case "4":
-            pack.innerHTML = `$ ${price+4} per pack`;
+            pack.innerHTML = `$ ${price + 4} per pack`;
             break;
         case "5":
-            pack.innerHTML = `$ ${price+5} per pack`;
+            pack.innerHTML = `$ ${price + 5} per pack`;
             break;
         case "6":
-            pack.innerHTML = `$ ${price+6} per pack`;
+            pack.innerHTML = `$ ${price + 6} per pack`;
             break;
         case "7":
-            pack.innerHTML = `$ ${price+7} per pack`;
-            break; 
-        default: "Contact for price";         
+            pack.innerHTML = `$ ${price + 7} per pack`;
+            break;
+        default: "Contact for price";
     };
 }
 
 //cart total variable
 let totalSumArr = 0;
+//cart count array
+let newArr = [];
+//cart count var
+let itemCount;
 
 //if add button clicked, add item to cart
-function addToCart(x, elem) {
-
+function addToCart(number, elem) {
+    const mediaSize = window.matchMedia("(min-width: 600px)");
+    let itemValue = elem.value;
     let itemPrice;
-    let z = elem.value;  
     let itemSize = elem.options[elem.selectedIndex].text;
 
     if (elem === firstSelect) {
@@ -168,32 +176,32 @@ function addToCart(x, elem) {
         price = 4;
     };
 
-   switch (z) {
-    case "0":
-        itemPrice = `${price}`;
-        break;
-    case "1":
-        itemPrice = `${price+1}`;
-        break;
-    case "2":
-        itemPrice = `${price+2}`;
-        break;
-    case "3":
-        itemPrice = `${price+3}`;
-        break;
-    case "4":
-        itemPrice = `${price+4}`;
-        break;
-    case "5":
-        itemPrice = `${price+5}`;
-        break;
-    case "6":
-        itemPrice = `${price+6}`;
-        break;
-    case "7":
-        itemPrice = `${price+7}`;
-        break; 
-    default: "Contact for price";           
+    switch (itemValue) {
+        case "0":
+            itemPrice = `${price}`;
+            break;
+        case "1":
+            itemPrice = `${price + 1}`;
+            break;
+        case "2":
+            itemPrice = `${price + 2}`;
+            break;
+        case "3":
+            itemPrice = `${price + 3}`;
+            break;
+        case "4":
+            itemPrice = `${price + 4}`;
+            break;
+        case "5":
+            itemPrice = `${price + 5}`;
+            break;
+        case "6":
+            itemPrice = `${price + 6}`;
+            break;
+        case "7":
+            itemPrice = `${price + 7}`;
+            break;
+        default: "Contact for price";
     };
 
     //create list
@@ -213,7 +221,7 @@ function addToCart(x, elem) {
     //create new item for list - type of pack
     const newItem1 = document.createElement('p');
     //create text of list item
-    const valueItem = document.createTextNode(`Pack of ${x}`);
+    const valueItem = document.createTextNode(`Pack of ${number}`);
 
     //create new item for list - size of pack
     const newItem2 = document.createElement('p');
@@ -225,7 +233,7 @@ function addToCart(x, elem) {
     const newItem3 = document.createElement('p');
     //create text of price
     const newPrice = document.createTextNode(`$${itemPrice}`)
-   
+
     //create div for delete button
     const newDiv = document.createElement('div');
     //create icon for delete button
@@ -261,13 +269,13 @@ function addToCart(x, elem) {
 
         newItem.style.width = '32w';
         newItem.style.height = '4vh';
-        
+
         newItem1.style.width = '13vw';
-        
+
         newItem2.style.width = '12vw';
-       
+
         newItem3.style.width = '4.5vw';
-        
+
 
         newDiv.style.display = 'flex';
         newDiv.style.justifyContent = 'center';
@@ -276,7 +284,7 @@ function addToCart(x, elem) {
         newDiv.style.height = '3vh';
 
         newIcon.style.display = 'flex';
-        
+
         newIcon.style.cursor = 'pointer';
 
         //put img for icon
@@ -287,16 +295,25 @@ function addToCart(x, elem) {
     totalSumArr = totalSumArr + Number(itemPrice);
     //display variable on the cart
     cartTotal.innerHTML = `Total: $${totalSumArr}`;
-    
+    //add each child element count to array
+    newArr.push(listBox.childElementCount);
+
     //on clicking icon, delete item and change total
     newIcon.addEventListener('click', () => {
         //remove item's price from total variable
         totalSumArr = totalSumArr - Number(itemPrice);
         //display updated variable on the cart
         cartTotal.innerHTML = `Total: $${totalSumArr}`;
+        //remove an item from array
+        newArr.pop();
+        //set variable equal no new array
+        itemCount = newArr.length;
+        //display new value for cart
+        cartCount.innerHTML = `${itemCount}`;
+
         //delete item from cart
         newItem.remove();
-    }) ;
+    });
 
     //append pack text to text p
     newItem1.appendChild(valueItem);
@@ -306,24 +323,25 @@ function addToCart(x, elem) {
 
     //append pack price to price p
     newItem3.appendChild(newPrice);
-     
+
     //append pack p, size p, price p and button to list item
-     newItem.appendChild(newItem1);
-     newItem.appendChild(newItem2);
-     newItem.appendChild(newItem3);
-     newItem.appendChild(newDiv);
+    newItem.appendChild(newItem1);
+    newItem.appendChild(newItem2);
+    newItem.appendChild(newItem3);
+    newItem.appendChild(newDiv);
 
-     //append list item to list
-     newList.appendChild(newItem);
+    //append list item to list
+    newList.appendChild(newItem);
+
     //append list to cart
-     listBox.appendChild(newList);
+    listBox.appendChild(newList);
 
-     
-
+    //set var equal to array length
+    itemCount = newArr.length;
+    //display new value for cart
+    cartCount.innerHTML = `${itemCount}`;
 }
 
-*/
-
 function checkOutPage() {
-    window.location.href='./checkOut.html';
+    window.location.href = './checkOut.html';
 }
