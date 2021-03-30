@@ -69,6 +69,21 @@
         <h3>This website is a personal project. No shells are being comercialized.</h3><br>
         <h3>Check out my <a href="https://flavsm.github.io/Developer_Flavia/" target="_blank" id="portfolio">Portfolio</a> for other projects.</h3>
     </div>
-    <script src="./cartElement.js"></script>
+    <script>
+        const dropBtn = document.querySelector('.menuButton');
+        const dropContent = document.querySelector('.dropDown');
+
+        dropBtn.addEventListener('click', openMenu);
+        dropContent.addEventListener('mouseleave', closeMenu);
+
+        function openMenu() {
+        dropContent.classList.toggle('show');
+        };
+
+        //hide dropdown menu
+        function closeMenu () {
+            dropContent.classList.remove('show');
+        }
+    </script>
 </body>
 </html>
