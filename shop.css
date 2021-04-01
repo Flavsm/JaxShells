@@ -22,7 +22,7 @@ body {
     min-height: 7vh;
     border-bottom: 1px solid whitesmoke;
     background-color: pink;
-    z-index: 2;
+    z-index: 3;
 }
 
 .showNavName {
@@ -100,6 +100,7 @@ body {
     height: 5vh;
     margin-top: 2px;
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    /* border-radius: 3px; */
 }
 
 .option {
@@ -123,6 +124,7 @@ body {
     text-decoration: none;
     color: black;
     background-color: #FFF5EE;
+    border-radius: 3px;
 }
 
 #about {
@@ -148,13 +150,14 @@ body {
     align-items: center;
     position: fixed;
     background-image:linear-gradient(135deg, #bcd4e6, pink);
-    height: 92.8vh;
     width: 35vw;
+    height: 92.8vh;
     margin-top: 7vh;
     margin-bottom: 0vh;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
+    z-index: 2;
     animation: slow-out 0.5s ease-out 1;
+    border-radius: 5px;
 }
 
 @keyframes slow-out {
@@ -187,6 +190,10 @@ body {
 }
 
 .listBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
     animation: roll-in 0.5s ease-out 1;
 }
@@ -198,6 +205,44 @@ body {
     100% {
         transform: translateX(0)
     }
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+    width: 31vw;
+    height: 4vh;
+    font-size: 11px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 2px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.3);
+}
+
+.listItem {
+    display: flex;
+    justify-content: flex-start;
+    text-align: justify;
+    align-items: center;
+    width: 33vw;
+    height: 3vh;
+}
+
+.iconDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 2vh;
+}
+
+.iconElement {
+    display: flex;
+    cursor: pointer;
+    color: black;
 }
 
 .cartTotalBox {
@@ -265,8 +310,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    justify-content: -webkit-flex;;
-    justify-content: --webkit-box;
+    /* justify-content: -webkit-flex;;
+    justify-content: --webkit-box; */
     align-items: center;
     background-image:linear-gradient(135deg, #bcd4e6, pink);
     width: 120px;
@@ -290,10 +335,10 @@ body {
 .sizeBox {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 20vw;
-    height: 7vh;
+    height: 13vh;
     margin: 5px;
 }
 
@@ -307,6 +352,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 8px;
+    border-radius: 3px;
 }
 
 .sizeBox p {
@@ -379,75 +425,26 @@ a, a:hover, a:focus, a:active {
 }
 
         @media (min-width: 600px) {
-
-            body {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                background-color:  	#FFF5EE;
-                height: 100vh;
-            }
-            
-            .navBar {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: space-between;
-                align-items: center;
-                position: fixed;
-                width: 100vw;
-                min-height: 7vh;
-                border-bottom: 1px solid whitesmoke;
-                background-color: pink;
-                z-index: 2;
-            }
             
             .showNavName {
-                display: block;
-                font-family: 'Caveat', cursive;
                 margin-left: 20px;
                 font-size: 30px;
             }
-            
-            #navjax {
-                color: black;
-            }
 
             .cartCount {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
                 width: 2vw;
                 height: 2vw;
-                border-radius: 20px;
                 margin-top: -30px;
                 margin-left: 20px;
-                background-color: #bcd4e6;
-                font-family: 'Lato', sans-serif;
-                font-weight: 600;
                 font-size: 16px;
             }
             
             .menuList {
-                display: flex;
                 justify-content: space-evenly;
-                list-style: none;
                 min-width: 15vw;
-                align-items: center;
-            }
-            
-            .dropBox {
-                position: relative;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-evenly;
             }
             
             .menuButton, .cartButton{
-                background: none;
-                border: none;
-                cursor: pointer;
                 font-size: 15px;
             }
             
@@ -461,75 +458,30 @@ a, a:hover, a:focus, a:active {
                 height: 32px;
             }
 
-            .dropDown {
-                display: none;
-            }
-
             .show {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
                 /* width: 6vw; */
                 width: 4vw;
                 /* height: 10vh; */
                 height: 5vh;
                 margin-top: 5px;
-                box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
             }
 
             .option {
-                cursor: pointer;
                 /* width: 6vw; */
                 width: 4vw;
                 height: 5vh;
             }
                 
             #home/* , #about */ {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                padding-left: 5px;
                 /* width: 6vw; */
                 width: 4vw;
-                height: 5vh;
-                font-family: 'Lato', sans-serif;
                 font-size: 15px;
                 font-weight: 500;
-                font-style: italic;
-                text-decoration: none;
-                color: black;
-                background-color: #FFF5EE;;
-            }
-
-            #about {
-                display: none;
-            }
-
-            #home:hover, #about:hover{
-                background-color: #bcd4e6;
-                box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
-            }
-
-            .cartBox {
-                display: none;
-                flex-direction: row;
-                justify-content: flex-end;
-                width: 100vw;
             }
 
             .cartList {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-                position: fixed;
-                background-image:linear-gradient(135deg, pink, #bcd4e6);
                 height: 93vh;
                 width: 20vw;
-                margin-top: 7vh;
-                margin-bottom: 0;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
                 animation: slow-out 0.5s ease-out 1;
             }
 
@@ -543,73 +495,59 @@ a, a:hover, a:focus, a:active {
             }
 
             .cartTitleBox {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 15vw;
-                height: 10vh;
+                height: 7vh;
                 font-size: 20px;
             }
 
             .itemsBox {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
                 width: 19vw;
                 height: 73vh;
                 line-height: 2;
             }
 
             .listBox {
-                list-style: none;
-                animation: roll-in 0.5s ease-out 1;
+                width: 19vw;
             }
 
-            @keyframes roll-in {
-                0% {
-                    transform: translateX(130px)
-                } 
-                100% {
-                    transform: translateX(0)
-                }
-            }
-
-            .cartTotalBox {
+            .cartItem {
                 display: flex;
                 justify-content: space-evenly;
+                align-self: center;
                 align-items: center;
+                width: 18vw;
+                height: 4vh;
+                font-size: 18px;
+                border: 1px solid black;
+                border-radius: 3px;
+                margin: 5px;
+                padding: 2px;
+                box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.3);
+            }
+
+            .listItem {
+                width: 17vw;
+                height: 2vw;
+            }
+            
+            .cartTotalBox {
                 width: 15vw;
                 font-size: 20px;
             }
 
             .checkOutBox {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 15vw;
                 height: 10vh;
             }
+
             .checkOutBtn {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 10vw;
                 height: 7vh;
                 font-size: 22px;
-                background-color: pink;
                 border-radius: 5px;
-                box-shadow: 4px 4px 8px 4px rgba(0,0,0,0.5);
-                opacity: 1;
-                text-decoration: none;
-                color: black;
             }
 
             .packsBox  {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 7vh;
                 height: 83vh;
                 font-size: 20px;
             }
@@ -627,9 +565,6 @@ a, a:hover, a:focus, a:active {
             }
             
             .packItem {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 30vw; 
             }
             
@@ -642,52 +577,37 @@ a, a:hover, a:focus, a:active {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                align-items: center;
-                background-image:linear-gradient(135deg, pink, #bcd4e6);
                 width: 200px;
                 height: 230px;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
             }
             
             .eachPackBox {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 width: 12vw;
-                font-family: 'Lato', sans-serif;
-                font-weight: 400;
                 font-size: 30px;
                 padding-top: 10px;
             }
 
             .sizeBox {
-                display: flex;
-                flex-direction: column;
                 justify-content: space-evenly;
-                align-items: center;
                 width: 12vw;
                 height: 20vh;
             }
             
             .sizeBox select{
+                display: flex;
+                align-items: center;
                 height: 4vh;
-                width: 12vw; 
-                font-family: 'Lato', sans-serif;
-                font-weight: 400;
+                width: 8vw; 
                 font-size: 12px;
             }
             
             .sizeBox p {
-                font-family: 'Lato', sans-serif;
-                font-weight: 400;
                 font-style: italic;
                 font-size: 20px;
             }
             
             .buttonBox {
                 display: flex;
-                flex-direction: row;
                 justify-content: space-evenly;
                 align-items: center;
                 height: 8vh;
@@ -695,52 +615,20 @@ a, a:hover, a:focus, a:active {
             }
             
             .buttonBox button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 height: 3.5vh;
                 width: 5vw;
                 font-size: 15px;
             }
             
             footer {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
                 min-height: 10vh;
-                background-color: pink;
-                border-bottom: 1px solid whitesmoke;
-            }
-            .contactBox {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .contactBox ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                list-style: none;
             }
             
             .contactBox, .contactBox ul {
-                font-family: 'Lato', sans-serif;
-                font-weight: 400;
-                font-style: italic;
+                
                 font-size: 16px;
                 color: black;
             }
 
-            button:hover, select:hover{
-                cursor: pointer;
-            }
-
-            a, a:hover, a:focus, a:active {
-                text-decoration: none;
-                color: inherit;
-           }
         }
 

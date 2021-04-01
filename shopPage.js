@@ -44,13 +44,13 @@ fourthSelect.addEventListener('change', () => { priceChange(fourthSelect, pack4)
 //add event listener to each pack's button
 addBtn.forEach(x => {
     if (x.id === 'add5') {
-        x.addEventListener('click', () => addToCart('5', firstSelect));
+        x.addEventListener('click', () => priceToCart('5', firstSelect));
     } else if (x.id === 'add10') {
-        x.addEventListener('click', () => addToCart('10', secondSelect));
+        x.addEventListener('click', () => priceToCart('10', secondSelect));
     } else if (x.id === 'add20') {
-        x.addEventListener('click', () => addToCart('20', thirdSelect));
+        x.addEventListener('click', () => priceToCart('20', thirdSelect));
     } else {
-        x.addEventListener('click', () => addToCart('50', fourthSelect));
+        x.addEventListener('click', () => priceToCart('50', fourthSelect));
     }
 });
 
@@ -69,7 +69,7 @@ function closeMenu() {
     dropContent.classList.remove('show');
 }
 
-
+//change the width of main element when cart open
 function showCart() {
     const mediaSize = window.matchMedia("(min-width: 600px)");
     if (cartBox.style.display !== "flex") {
@@ -152,16 +152,11 @@ function priceChange(elem, pack) {
     };
 }
 
-//cart total variable
-let totalSumArr = 0;
-//cart count array
-let newArr = [];
-//cart count var
-let itemCount;
 
-//if add button clicked, add item to cart
-function addToCart(number, elem) {
-    const mediaSize = window.matchMedia("(min-width: 600px)");
+//if add button clicked, add item to cart with corret price
+function priceToCart(number, elem) {
+
+
     let itemValue = elem.value;
     let itemPrice;
     let itemSize = elem.options[elem.selectedIndex].text;
@@ -204,99 +199,79 @@ function addToCart(number, elem) {
         default: "Contact for price";
     };
 
-    //create list
-    const newList = document.createElement('ul');
-    newList.style.display = 'flex';
-    newList.style.flexDirection = 'column';
-    newList.style.justifyContent = 'space-evenly';
-    newList.style.alignItems = 'center';
+    addToCart(number, itemSize, itemPrice)
 
-    //create list item
+}
+
+   //cart total variable
+   let totalSumArr = 0;
+   //cart count array
+   let newArr = [];
+   //cart count var
+   let itemCount;
+   
+
+//to add item to cart
+function addToCart(number, itemSize, itemPrice) {
+
+    //check devices size
+    const mediaSize = window.matchMedia("(min-width: 600px)");
+
+    //if cart not full
+    if (listBox.childElementCount <= 12) {
+
+        //create list item
     const newItem = document.createElement('li');
-    //give style to list item
-    newItem.style.display = 'flex';
-    newItem.style.justifyContent = 'space-evenly';
-    newItem.style.alignItems = 'center';
+    newItem.classList.add('cartItem');
 
-    //create new item for list - type of pack
-    const newItem1 = document.createElement('p');
-    //create text of list item
-    const valueItem = document.createTextNode(`Pack of ${number}`);
-
-    //create new item for list - size of pack
-    const newItem2 = document.createElement('p');
-    //create text of pack size
-    const sizeItem = document.createTextNode(`${itemSize}`);
-
-
-    //create new item for list - price of pack
-    const newItem3 = document.createElement('p');
-    //create text of price
-    const newPrice = document.createTextNode(`$${itemPrice}`)
+    //create new paragraph for list 
+    const newText = document.createElement('p');
+    newText.classList.add('listItem')
+    //create text of paragraph
+    newText.innerHTML = `Pack of ${number}  -  ${itemSize}  -  $${itemPrice}`;
 
     //create div for delete button
     const newDiv = document.createElement('div');
+    newDiv.classList.add('iconDiv');
     //create icon for delete button
     const newIcon = document.createElement('i');
+    newIcon.classList.add('iconElement');
     //append icon to div
     newDiv.appendChild(newIcon);
 
     // check media size
     if (mediaSize.matches) {
-        newList.style.fontSize = '18px';
-
-        newItem.style.width = '19vw';
-        newItem.style.height = '4vh';
-
-        newItem1.style.width = '7vw';
-        newItem2.style.width = '6vw';
-        newItem3.style.width = '2vw';
-
-        newDiv.style.width = '2vw';
-        newDiv.style.height = '2vh';
-        newDiv.style.display = 'flex';
-        newDiv.style.justifyContent = 'center';
-        newDiv.style.alignItems = 'center';
-
-        newIcon.style.paddingTop = '10px';
-        newIcon.style.cursor = 'pointer';
-        newIcon.style.color = 'black';
-
-        //put img for icon
+        //put img for icon when width = 600+
         newIcon.innerHTML = '<img id="the-img" src="./delete.png" width="30" height="30">';
     } else {
-        newList.style.fontSize = '9px';
-
-        newItem.style.width = '32w';
-        newItem.style.height = '4vh';
-
-        newItem1.style.width = '13vw';
-
-        newItem2.style.width = '12vw';
-
-        newItem3.style.width = '4.5vw';
-
-
-        newDiv.style.display = 'flex';
-        newDiv.style.justifyContent = 'center';
-        newDiv.style.alignItems = 'center';
-        newDiv.style.width = '3vw';
-        newDiv.style.height = '3vh';
-
-        newIcon.style.display = 'flex';
-
-        newIcon.style.cursor = 'pointer';
-
-        //put img for icon
+        //put img for icon when width = 600-
         newIcon.innerHTML = '<img src="./delete.png" width="18" height="18">';
     }
+
+    //append pack text to item
+    newItem.appendChild(newText);
+    
+    //append delete icon to item
+    newItem.appendChild(newDiv);
+
+    //append item to cart list
+    listBox.appendChild(newItem);
+
+    //TOTAL PRICE, CART COUNT AND DELETE BUTTON
 
     //add item's price to total variable
     totalSumArr = totalSumArr + Number(itemPrice);
     //display variable on the cart
     cartTotal.innerHTML = `Total: $${totalSumArr}`;
+
     //add each child element count to array
     newArr.push(listBox.childElementCount);
+
+    //set var equal to array length
+    itemCount = newArr.length;
+
+    //display new value for cart
+    cartCount.innerText = `${itemCount}`;
 
     //on clicking icon, delete item and change total
     newIcon.addEventListener('click', () => {
@@ -304,44 +279,56 @@ function addToCart(number, elem) {
         totalSumArr = totalSumArr - Number(itemPrice);
         //display updated variable on the cart
         cartTotal.innerHTML = `Total: $${totalSumArr}`;
+
         //remove an item from array
         newArr.pop();
         //set variable equal no new array
         itemCount = newArr.length;
         //display new value for cart
+
         cartCount.innerHTML = `${itemCount}`;
 
         //delete item from cart
         newItem.remove();
+
     });
 
-    //append pack text to text p
-    newItem1.appendChild(valueItem);
 
-    //append pack size to size p
-    newItem2.appendChild(sizeItem);
-
-    //append pack price to price p
-    newItem3.appendChild(newPrice);
-
-    //append pack p, size p, price p and button to list item
-    newItem.appendChild(newItem1);
-    newItem.appendChild(newItem2);
-    newItem.appendChild(newItem3);
-    newItem.appendChild(newDiv);
-
-    //append list item to list
-    newList.appendChild(newItem);
-
-    //append list to cart
-    listBox.appendChild(newList);
-
-    //set var equal to array length
-    itemCount = newArr.length;
-    //display new value for cart
-    cartCount.innerHTML = `${itemCount}`;
+    } else {
+        alert('Cart is full, please remove an item.')
+    }
 }
 
+//go to check-out page
 function checkOutPage() {
     window.location.href = './checkOut.html';
 }
+
+
+//attempts at local storage (partially worked)
+    
+/* function setData() {
+    localStorage.setItem('itemCount', `${itemCount}`);
+    localStorage.setItem('totalSumArr', `${totalSumArr}`);
+    localStorage.setItem('lastDiv', `${lastDiv}`);
+}
+
+function getData() {
+    itemCount = localStorage.getItem('itemCount');
+    totalSumArr = localStorage.getItem('totalSumArr'); 
+    lastDiv = localStorage.getItem('lastDiv');
+} */
+
+ /* console.log(listBox.innerText); */
+
+ /* localStorage.setItem('cartCount', `${itemCount}`);
+
+cartCount.innerHTML = localStorage.getItem('cartCount'); */
+
+/* localStorage.setItem('cartTotal', `${totalSumArr}`);
+        cartTotal.innerHTML = `Total: $${localStorage.getItem('cartTotal')}`; */
+
+/* localStorage.setItem('cartCount', `${itemCount}`)
+    cartCount.innerText = localStorage.getItem('cartCount'); */
+/* localStorage.setItem('cartTotal', `${totalSumArr}`);
+    cartTotal.innerHTML = `Total: $${localStorage.getItem('cartTotal')}`; */

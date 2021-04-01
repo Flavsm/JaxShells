@@ -717,9 +717,9 @@ a, a:hover, a:focus, a:active {
                 width: 18vw;
             }
 
-            .sizeBox img {
+            /* .sizeBox img {
                 width: 650px;
-            }
+            } */
 
             .packetBox {
                 display: flex;
