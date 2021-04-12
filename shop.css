@@ -229,8 +229,8 @@ body {
     align-items: center;
     width: 37vw;
     height: 3vh;
-    background-color: darkgreen;
-    font-size: 12px;
+    background-color: red;
+    font-size: 11px;
 }
 
 .iconDiv {
