@@ -156,7 +156,6 @@ function priceChange(elem, pack) {
 //if add button clicked, add item to cart with corret price
 function priceToCart(number, elem) {
 
-
     let itemValue = elem.value;
     let itemPrice;
     let itemSize = elem.options[elem.selectedIndex].text;
@@ -199,7 +198,7 @@ function priceToCart(number, elem) {
         default: "Contact for price";
     };
 
-    addToCart(number, itemSize, itemPrice)
+    addToCart(number, itemSize, itemPrice);
 
 }
 
@@ -228,7 +227,7 @@ function addToCart(number, itemSize, itemPrice) {
     const newText = document.createElement('p');
     newText.classList.add('listItem')
     //create text of paragraph
-    newText.innerHTML = `Pack of ${number}  -  ${itemSize}  -  $${itemPrice}`;
+    newText.innerHTML = `Pack of ${number} - ${itemSize} - $${itemPrice}`;
 
     //create div for delete button
     const newDiv = document.createElement('div');
@@ -297,6 +296,7 @@ function addToCart(number, itemSize, itemPrice) {
     } else {
         alert('Cart is full, please remove an item.')
     }
+
 }
 
 //go to check-out page
