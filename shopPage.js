@@ -227,7 +227,7 @@ function addToCart(number, itemSize, itemPrice) {
     const newText = document.createElement('p');
     newText.classList.add('listItem')
     //create text of paragraph
-    newText.innerHTML = `Pack of ${number}-${itemSize}-$${itemPrice}`;
+    newText.innerHTML = `P${number}-${itemSize}-$${itemPrice}`;
 
     //create div for delete button
     const newDiv = document.createElement('div');
