@@ -13,8 +13,8 @@ This project started as a way to practice and apply JAVASCRIPT to real apps, and
 The challenges of this project were mainly:
 
 * Using only vanilla JS and CSS to make the cart animations
-* Updating the cart with new/deleting items while increasing or decreasing the total
-* Using more features  of CSS
+* Updating the cart with new/deleted items while increasing or decreasing the total
+* Using previously unkown features of CSS
 
 ## Implement
 
