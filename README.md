@@ -6,7 +6,7 @@ E-commerce website to sell sea shells. Users are able to choose sizes, variety p
 
 ## Purpose
 
-This project started as a way to practice and apply JAVASCRIPT to real apps, and it has been added to my portfolio. 
+This project started as a way to practice and apply Javascript to real apps.
 
 ## Challenges
 
